@@ -1,8 +1,8 @@
 /*
-Program       esci.js
+Program       esci-web.js
 Author        Gordon Moore
 Date          14 July 2020
-Description   The JavaScript code for esci-wb
+Description   The JavaScript code for esci-web
 Licence       GNU General Public LIcence Version 3, 29 June 2007
 */
 
@@ -11,11 +11,10 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.0                 Initial version
 */
 //#endregion 
-// @ts-check
 
 let version = '0.0.1';
 
-'use strict';
+// 'use strict';
 $(function() {
   console.log('jQuery here!');  //just to make sure everything is working
 
@@ -24,9 +23,13 @@ $(function() {
 
   //#endregion
 
+
+  setTooltips();
+
   initialise();
 
   function initialise() {
+
 
   }
 
@@ -38,6 +41,25 @@ $(function() {
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/
 
+  function setTooltips() {
+    Tipped.setDefaultSkin('esci');
+
+    //heading section
+    Tipped.create('#logo', 'Version: '+version, { skin: 'red', size: 'xlarge' });
+    Tipped.create('#tooltipsonoff', 'Allow tooltips on or off, default is off!', { skin: 'esci', size: 'xlarge' });
+
+    Tipped.create('#mainheading', 'From The New Statistics: ', { skin: 'esci', size: 'xlarge' });
+    Tipped.create('#subheading', 'https://thenewstatistics.com', { skin: 'esci', size: 'xlarge' });
+
+
+
+
+    //footer
+    Tipped.create('#footerlink', 'Return to the New Statistics website. ', { skin: 'esci', size: 'xlarge' });
+
+    Tipped.disable('[data-tooltip]');
+  }
+
   $('#tooltipsonoff').on('click', function() {
     if (tooltipson) {
       tooltipson = false;
@@ -46,6 +68,7 @@ $(function() {
     else {
       tooltipson = true;
       $('#tooltipsonoff').css('background-color', 'lightgreen');
+      Tipped.enable('[data-tooltip]');
     }
   })
 
@@ -56,6 +79,7 @@ $(function() {
   })
 
   /*---------------------------------------------------------  resize event -----------------------------------------------*/
+  
   $(window).bind('resize', function(e){
     window.resizeEvt;
     $(window).resize(function(){
