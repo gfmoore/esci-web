@@ -2,7 +2,7 @@
 Program       index.html 
 Author        Gordon Moore
 Date          14 July 2020
-Description   A JavaScript implementation of ESCI for Introduction to the New Statistics by Geoff Cumming and Robert Calin-Jageman
+Description   A JavaScript implementation of ESCI Menu for Introduction to the New Statistics by Geoff Cumming and Robert Calin-Jageman
 Licence       GNU General Public LIcence Version 3, 29 June 2007
 -->
 <!-- #region version history-->
@@ -29,10 +29,13 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
     <!--clear favicon cache-->
     <link rel="shortcut icon" href="./favicon.ico?v=2">  
 
-    <title>esci-web</title>
+    <title>esci-web Main Menu</title>
 
     <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./css/tooltipster.bundle.min.css" />
+
     <link href=./css/esci.css rel=stylesheet>
+    <link href=./css/esci-web.css rel=stylesheet>
 
     <!-- scripts -->
     <script src=https://code.jquery.com/jquery-3.5.0.js
@@ -40,17 +43,43 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
             crossorigin="anonymous">
     </script>
 
-    <script src=https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js defer></script>
+    <script type="text/javascript" src="./js/tooltipster.bundle.min.js"></script>
 
-    <script src=https://d3js.org/d3.v5.min.js defer></script>
-
-    <script src=./js/esci.js defer></script>
+    <script src=./js/esci-web.js defer></script>
 
   </head>
 
   <body>
-    <h1>esci-web</h1>
-    
+    <div id=main>
+
+      <div id=leftpanel>
+        <!----------------------------------Main heading---------------------------------->
+        <div id=header>
+          <div id=logo><img id=logoimg src=./images/logo.png></div>
+          <div id=mainheading>esci web</div>
+          <div id=subheading>Main Menu</div>
+          <div id=tooltipsonoff>?</div>
+        </div>
+
+
+        <!---------------------------------Main menu items---------------------------->
+        <div id=mainmenu>
+          <div class=menuitems id=menu1>esci dances (of means)</div>
+          <div class=menuitems id=menu2>esci normal</div>
+          <div class=menuitems id=menu3>?</div>
+        </div>
+
+        <!---------------------------------Footer---------------------------------------------->
+        <div id=footer>
+          <div id=footerlink data-tooltip>Please click here to return to the New Statistics website.</div>
+        </div>
+      </div>
+
+      <div id=rightpanel>
+
+      </div>
+
+    </div>
 
   </body>
 </html>
