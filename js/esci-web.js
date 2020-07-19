@@ -37,6 +37,13 @@ $(function() {
 
   }
 
+  $('#menu1').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-dances/';
+  })
+
+  $('#menu2').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-distributions/';
+  })
 
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/
@@ -46,16 +53,22 @@ $(function() {
 
     //heading section
     Tipped.create('#logo', 'Version: '+version, { skin: 'red', size: 'xlarge' });
-    Tipped.create('#tooltipsonoff', 'Allow tooltips on or off, default is off!', { skin: 'esci', size: 'xlarge' });
+    Tipped.create('#tooltipsonoff', 'Allow tooltips on or off, default is off!', { skin: 'esci', size: 'xlarge', showDelay: 750 });
 
-    Tipped.create('#mainheading', 'From The New Statistics: ', { skin: 'esci', size: 'xlarge' });
-    Tipped.create('#subheading', 'https://thenewstatistics.com', { skin: 'esci', size: 'xlarge' });
+    Tipped.create('#mainheading', 'From The New Statistics: ', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    Tipped.create('#subheading', 'https://thenewstatistics.com', { skin: 'esci', size: 'xlarge', showDelay: 750 });
 
+    Tipped.create('#menu1', 'This page takes you to where you can investigate and experiement with sampling from a distribution. It includes the dance of the means and the dance of the p values.', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    Tipped.create('#menu2', 'This page takes you to where you can investigate the normal and Student t distribution.', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    Tipped.create('#menu3', 'This page goes nowhere...yet :)', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    // Tipped.create('#', '', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    // Tipped.create('#', '', { skin: 'esci', size: 'xlarge', showDelay: 750 });
 
+    // Tipped.create('#', '', { skin: 'esci', size: 'xlarge', showDelay: 750 });
 
 
     //footer
-    Tipped.create('#footerlink', 'Return to the New Statistics website. ', { skin: 'esci', size: 'xlarge' });
+    Tipped.create('#footerlink', 'Return to the New Statistics website. ', { skin: 'esci', size: 'xlarge', showDelay: 750 });
 
     Tipped.disable('[data-tooltip]');
   }

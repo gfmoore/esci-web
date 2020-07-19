@@ -14,3 +14,25 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 
 /*-------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------Menu items--------------------------------------------*/
+
+.menuitems {
+  background-color: lemonchiffon;
+  border: 2px solid blue;
+  border-radius: 10px;
+  height: 4rem;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 1.0rem;
+  font-size: 2rem;
+}
+
+.menuitems:hover {
+  background-color: lightgreen;
+}
+
+.menuitems:active {
+  background-color: green;
+}
