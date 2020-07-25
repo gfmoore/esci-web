@@ -8,7 +8,8 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 /* #region Version history
 
-0.0.1       Initial version
+0.0.1         Initial version
+0.1.0          2020-07-25 The first attempt
 
 #endregion */
 
@@ -17,7 +18,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 /*-------------------------------------Menu items--------------------------------------------*/
 
-.menuitems {
+#mainmenu {
+  /* border: 1px solid red; */
+  height: 30rem;   /*change this when adding new menus - it acts as a hot spot*/
+}
+
+.menus {
   background-color: lemonchiffon;
   border: 2px solid blue;
   border-radius: 10px;
@@ -26,13 +32,66 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   margin-top: 20px;
   margin-right: 10px;
   padding: 1.0rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-.menuitems:hover {
+.menus:hover {
   background-color: lightgreen;
 }
 
-.menuitems:active {
+.menus:active {
   background-color: green;
+}
+
+.menuitems {
+  border: 1px solid green;
+  border-radius: 15px;
+  margin: 3rem;
+  padding: 1rem;
+  background-color: palegreen;
+  width: 50rem;
+  font-size: 2.0rem;
+}
+
+
+/*-----------------------------right panel--------------------------------*/
+
+
+#bookimage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5rem;
+}
+
+#bkimage {
+  width: 40rem;
+  height: 60rem;
+}
+
+#blurb {
+  font-size: 3rem;
+}
+
+#esciheader {
+  margin-top: 1.0rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+#esciblurb {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+
+#dances {
+  margin-top: 2rem;
+  width: 50rem;
+  height: 40rem;
+}
+
+#distributions {
+  margin-top: 2rem;
+  width: 50rem;
+  height: 40rem;
 }

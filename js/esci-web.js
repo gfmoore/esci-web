@@ -8,11 +8,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 // #region Version history
 /*
-0.1.0                 Initial version
+0.0.1          Initial version
+0.1.0          2020-07-25 The first attempt
 */
 //#endregion 
 
-let version = '0.0.1';
+let version = '0.1.0';
 
 // 'use strict';
 $(function() {
@@ -20,6 +21,16 @@ $(function() {
 
   //#region for variable definitions (just allows code folding)
   let tooltipson = false;
+
+  //cache dom elements
+  const $mainmenu = $('#mainmenu');
+  const $menus = $('.menus');
+  const $bookimage = $('#bookimage');
+
+  const $menuitems = $('.menuitems');
+  const $menuitem1 = $('#menuitem1');
+  const $menuitem2 = $('#menuitem2');
+  const $menuitem3 = $('#menuitem3');
 
   //#endregion
 
@@ -29,13 +40,36 @@ $(function() {
   initialise();
 
   function initialise() {
-
+    $menuitems.hide();
 
   }
 
   function resize() {
 
   }
+
+  $menus.on('mouseenter', function() {
+    $bookimage.fadeOut(100);
+
+    lg($(this).prop('id'));
+    if ($(this).prop('id') === 'menu1') {
+      $menuitem1.fadeIn(500);
+    }
+    if ($(this).prop('id') === 'menu2') {
+      $menuitem2.fadeIn(500);
+    }
+    if ($(this).prop('id') === 'menu3') {
+      $menuitem3.fadeIn(500);
+    }
+  })
+
+  $menus.on('mouseleave', function() {
+     $menuitems.fadeOut(200);
+  })
+
+  $mainmenu.on('mouseleave', function() {
+    $bookimage.fadeIn(500);
+  })
 
   $('#menu1').on('click', function() {
     window.location.href = 'https://gfmoore.github.io/esci-dances/';
@@ -104,7 +138,7 @@ $(function() {
   });
 
   //helper function for testing
-  function log(s) {
+  function lg(s) {
     console.log(s);
   }  
 
