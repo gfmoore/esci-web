@@ -8,12 +8,13 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 // #region Version history
 /*
-0.0.1          Initial version
-0.1.0          2020-07-25 The first attempt
+0.0.1         Initial version
+0.1.0         2020-07-25 The first attempt
+0.1.1         2020-08-31 Replaced cdn links with direct links to libraries for portability and resilience 
 */
 //#endregion 
 
-let version = '0.1.0';
+let version = '0.1.1';
 
 // 'use strict';
 $(function() {
