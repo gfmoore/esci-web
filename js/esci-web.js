@@ -14,11 +14,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.2         2020-07-31 Footer link text changed
 0.1.3         2020-08-01 Menu links changed to new subdomains
 0.1.4   2020-08-07  Just adjusted font size of menu items and allowed some padding on main image at right
+0.1.5   2020-08-07  More slight adjustments to right panel
 
 */
 //#endregion 
 
-let version = '0.1.4';
+let version = '0.1.5';
 
 // 'use strict';
 $(function() {
