@@ -13,11 +13,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.1         2020-07-31 Replaced cdn links with direct links to libraries for portability and resilience 
 0.1.2         2020-07-31 Footer link text changed
 0.1.3         2020-08-01 Menu links changed to new subdomains
+0.1.4   2020-08-07  Just adjusted font size of menu items and allowed some padding on main image at right
 
 */
 //#endregion 
 
-let version = '0.1.3';
+let version = '0.1.4';
 
 // 'use strict';
 $(function() {
