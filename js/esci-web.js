@@ -8,18 +8,19 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 // #region Version history
 /*
-0.0.1         Initial version
-0.1.0         2020-07-25 The first attempt
-0.1.1         2020-07-31 Replaced cdn links with direct links to libraries for portability and resilience 
-0.1.2         2020-07-31 Footer link text changed
-0.1.3         2020-08-01 Menu links changed to new subdomains
+0.0.1   Initial version
+0.1.0   2020-07-25 The first attempt
+0.1.1   2020-07-31 Replaced cdn links with direct links to libraries for portability and resilience 
+0.1.2   2020-07-31 Footer link text changed
+0.1.3   2020-08-01 Menu links changed to new subdomains
 0.1.4   2020-08-07  Just adjusted font size of menu items and allowed some padding on main image at right
 0.1.5   2020-08-07  More slight adjustments to right panel
+0.1.6   2020-08-15  Add d picture link
 
 */
 //#endregion 
 
-let version = '0.1.5';
+let version = '0.1.6';
 
 // 'use strict';
 $(function() {
@@ -37,6 +38,7 @@ $(function() {
   const $menuitem1 = $('#menuitem1');
   const $menuitem2 = $('#menuitem2');
   const $menuitem3 = $('#menuitem3');
+  const $menuitem4 = $('#menuitem4');
 
   //#endregion
 
@@ -67,6 +69,9 @@ $(function() {
     if ($(this).prop('id') === 'menu3') {
       $menuitem3.fadeIn(500);
     }
+    if ($(this).prop('id') === 'menu4') {
+      $menuitem4.fadeIn(500);
+    }
   })
 
   $menus.on('mouseleave', function() {
@@ -85,6 +90,9 @@ $(function() {
     window.location.href = 'https://www.esci-distributions.thenewstatistics.com/';
   })
 
+  $('#menu3').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-d-picture/';
+  })
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/
 
