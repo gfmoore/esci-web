@@ -16,11 +16,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.4   2020-08-07  Just adjusted font size of menu items and allowed some padding on main image at right
 0.1.5   2020-08-07  More slight adjustments to right panel
 0.1.6   2020-08-15  Add d picture link
+0.1.7   2020-08-17  Add d picture image
 
 */
 //#endregion 
 
-let version = '0.1.6';
+let version = '0.1.7';
 
 // 'use strict';
 $(function() {
