@@ -180,5 +180,5 @@ $(function() {
     console.log(s);
   }  
 
-})/
+})
 
