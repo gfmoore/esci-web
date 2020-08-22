@@ -17,11 +17,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.5   2020-08-07  More slight adjustments to right panel
 0.1.6   2020-08-15  Add d picture link
 0.1.7   2020-08-17  Add d picture image
+0.1.8   2020-08-22  Add precision and see r menu items
 
 */
 //#endregion 
 
-let version = '0.1.7';
+let version = '0.1.8';
 
 // 'use strict';
 $(function() {
@@ -40,6 +41,8 @@ $(function() {
   const $menuitem2 = $('#menuitem2');
   const $menuitem3 = $('#menuitem3');
   const $menuitem4 = $('#menuitem4');
+  const $menuitem5 = $('#menuitem5');
+  const $menuitem6 = $('#menuitem6');
 
   //#endregion
 
@@ -73,6 +76,13 @@ $(function() {
     if ($(this).prop('id') === 'menu4') {
       $menuitem4.fadeIn(500);
     }
+    if ($(this).prop('id') === 'menu5') {
+      $menuitem5.fadeIn(500);
+    }
+    if ($(this).prop('id') === 'menu6') {
+      $menuitem6.fadeIn(500);
+    }
+
   })
 
   $menus.on('mouseleave', function() {
@@ -94,6 +104,19 @@ $(function() {
   $('#menu3').on('click', function() {
     window.location.href = 'https://gfmoore.github.io/esci-d-picture/';
   })
+
+  $('#menu4').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-precision/';
+  })
+
+  $('#menu5').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-see-r/';
+  })
+
+  $('#menu6').on('click', function() {
+    //window.location.href = 'https://';
+  })
+
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/
 
@@ -157,5 +180,5 @@ $(function() {
     console.log(s);
   }  
 
-})
+})/
 
