@@ -14,6 +14,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.4   2020-08-07  Just adjusted font size of menu items and allowed some padding on main image at right
 0.1.5   2020-08-07  More slight adjustments to right panel
 0.1.8
+0.1.9   2020-08-24  #1 Make changes re specification
 
 #endregion */
 
@@ -21,6 +22,14 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 /*-------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------Menu items--------------------------------------------*/
+
+#mainpage {
+  display: grid;
+  grid-template-columns: 40rem auto;
+  grid-column-gap: 30px;
+  height: 100%;
+}
+
 
 #mainmenu {
   /* border: 1px solid red; */
@@ -32,9 +41,9 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   border: 2px solid blue;
   border-radius: 10px;
   height: 2.0rem;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
   padding-left: 1.0rem;
   padding-top: 0.8rem;
   padding-bottom: 1.0rem;
@@ -52,53 +61,58 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 .menuitems {
   border: 1px solid green;
   border-radius: 15px;
-  margin: 3rem;
-  padding: 1rem;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 1rem;
+  padding: 0.5rem;
   /* background-color: palegreen; */
-  width: 50rem;
+  width: 37rem;
   font-size: 2.0rem;
+}
+
+.menuimage {
+  margin-top: 0rem;
+  width: 37rem;
+  height: 20rem;
 }
 
 
 /*-----------------------------right panel--------------------------------*/
 
+#rightpanel {
+}
 
-#bookimage {
+#rightpanelgrid {
   display: grid;
-  grid-template-columns: 45rem auto;
-  margin: 5rem;
+  grid-template-columns: 22rem auto;
+  grid-column-gap: 2rem;
 }
 
 #bkimage {
-  width: 40rem;
-  height: 60rem;
+  width: 220px;
+  height: 310px;
   padding-right: 5rem;
 }
 
-#blurb {
-  font-size: 3rem;
+#esciimage {
+  width: 210px;
+  height: 150px;
+  padding-top: 2rem;
+  padding-right: 0rem;
 }
 
-#esciheader {
-  margin-top: 1.0rem;
-  font-size: 2.2rem;
-  font-weight: bold;
-}
 
-#esciblurb {
+#itnsblurb {
   margin-top: 2rem;
   font-size: 1.8rem;
 }
 
-
-#dances {
-  margin-top: 2rem;
-  width: 50rem;
-  height: 40rem;
+#escitext {
+  margin-top: 8rem;
+  font-size: 1.8rem;
 }
 
-#distributions {
+.esciblurb {
   margin-top: 2rem;
-  width: 50rem;
-  height: 40rem;
+  font-size: 1.8rem;
 }

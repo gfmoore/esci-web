@@ -18,6 +18,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.6   2020-08-15  Add d picture link
 0.1.7   2020-08-17  Add d picture image
 0.1.8   2020-08-22  Add precision and see r menu items
+0.1.9   2020-08-24  #1 Make changes re specification
 
 */
 //#endregion 
@@ -53,15 +54,10 @@ $(function() {
 
   function initialise() {
     $menuitems.hide();
-
-  }
-
-  function resize() {
-
   }
 
   $menus.on('mouseenter', function() {
-    $bookimage.fadeOut(100);
+    //$bookimage.fadeOut(100);
 
     lg($(this).prop('id'));
     if ($(this).prop('id') === 'menu1') {
@@ -86,11 +82,11 @@ $(function() {
   })
 
   $menus.on('mouseleave', function() {
-     $menuitems.fadeOut(200);
+     $menuitems.fadeOut(0);
   })
 
   $mainmenu.on('mouseleave', function() {
-    $bookimage.fadeIn(500);
+    $bookimage.fadeIn(0);
   })
 
   $('#menu1').on('click', function() {
@@ -165,15 +161,16 @@ $(function() {
 
   /*---------------------------------------------------------  resize event -----------------------------------------------*/
   
-  $(window).bind('resize', function(e){
-    window.resizeEvt;
-    $(window).resize(function(){
-        clearTimeout(window.resizeEvt);
-        window.resizeEvt = setTimeout(function(){
-          resize();
-        }, 500);
-    });
-  });
+  // $(window).bind('resize', function(e){
+  //   window.resizeEvt;
+  //   $(window).resize(function(){
+  //       clearTimeout(window.resizeEvt);
+  //       window.resizeEvt = setTimeout(function(){
+  //         resize();
+  //       }, 500);
+  //   });
+  // });
+
 
   //helper function for testing
   function lg(s) {

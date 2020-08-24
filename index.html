@@ -17,6 +17,8 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.6   2020-08-15  Add d picture menu item
 0.1.7   2020-08-17  Add d picture image
 0.1.8   2020-08-22  Add precision and see-r menu items
+0.1.9   2020-08-24  #1 Make changes re specification
+
 -->
 <!--endregion -->
 
@@ -59,7 +61,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   </head>
 
   <body>
-    <div id=main>
+    <div id=mainpage>
 
       <div id=leftpanel>
         <!----------------------------------Main heading---------------------------------->
@@ -73,12 +75,35 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
         <!---------------------------------Main menu items---------------------------->
         <div id=mainmenu>
+
           <div class=menus id=menu1 data-tooltip>dances beta</div>
+          <div id=menuitem1 class=menuitems>
+            <div><img id=dances class=menuimage src=./images/dances.png alt='image of dances screen'></div>
+          </div>
+
           <div class=menus id=menu2 data-tooltip>distributions beta</div>
+          <div id=menuitem2 class=menuitems>
+            <div><img id=distributions class=menuimage src=./images/distribution.png alt='image of distributions screen'></div>
+          </div>
+
           <div class=menus id=menu3 data-tooltip><em>d</em> picture beta</div>
+          <div id=menuitem3 class=menuitems>
+            <div><img id=distributions class=menuimage src=./images/dpicture.png alt='image of distributions screen'></div>
+          </div>
+
           <div class=menus id=menu4 data-tooltip>precision for planning (in development) </div>
+          <div id=menuitem4 class=menuitems>
+            <div><img id=distributions class=menuimage src= alt='image of distributions screen'></div>
+          </div>
+
           <div class=menus id=menu5 data-tooltip>see <em>r</em> (in development)</div>
-          <!-- <div class=menus id=menu6 data-tooltip>...</div> -->
+          <div id=menuitem5 class=menuitems>
+            <div><img id=distributions class=menuimage src= alt='image of distributions screen'></div>
+          </div>
+
+          <!-- <div class=menus id=menu6 data-tooltip>...</div>
+          <div id=menuitem6 class=menuitems>
+          </div> -->
         </div>
 
         <!---------------------------------Footer---------------------------------------------->
@@ -88,37 +113,17 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
       </div>
 
       <div id=rightpanel>
-        <div id=bookimage>
-          <div>
-            <img id=bkimage src=./images/ITNS-the-cover-2-Feb-16-large.png alt='image of the front cover of The New Statistics book'>
-          </div>
-          <div>
-            <img id=esciimg src=./images/escilogotransparent.png>
-            <div>
-              <div id=esciheader>Exploratory Software for Confidence Intervals</div>
-              <div id=esciblurb>A set of interactive pages that allows you to explore statistical concepts ...</div>
-            </div>
-          </div>
-        </div>
-        <div id=blurb>
-        
-        <div id=menuitem1 class=menuitems>
-          <div><img id=dances src=./images/dances.png alt='image of dances screen'></div>
-        </div>
-        <div id=menuitem2 class=menuitems>
-          <div><img id=distributions src=./images/distribution.png alt='image of distributions screen'></div>
-        </div>
-        <div id=menuitem3 class=menuitems>
-          <div><img id=distributions src=./images/dpicture.png alt='image of distributions screen'></div>
-        </div>
-        <div id=menuitem4 class=menuitems>
-        </div>
-        <div id=menuitem5 class=menuitems>
-        </div>
-        <div id=menuitem6 class=menuitems>
+        <div id=rightpanelgrid>
+          <div><img id=bkimage src=./images/ITNS-the-cover-2-Feb-16-large.png alt='image of the front cover of The New Statistics book'></div>
+          <div id=itnsblurb>Information about the first edition, and blog, at <a href=https://www.thenewstatistics.com>www.thenewstatistics.com</a></div>
+  
+          <div><img id=esciimage src=./images/escilogotransparent.png alt='image of esci logo'></div>
+          <div id=escitext>exploratory software for confidence intervals</div>          
         </div>
 
-      </div>
+        <div class=esciblurb>esci software is in development. There are two components:</div>
+        <div class=esciblurb>esci in R, running in jamovi, for data analysis and great graphs with CIs, by Robert Calin-Jageman</div>        
+        <div class=esciblurb>  esci web in javascript, for statistical dances and interactive graphical tools, by Gordon Moore</div>
 
     </div>
 
