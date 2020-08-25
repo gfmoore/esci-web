@@ -19,11 +19,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.7   2020-08-17  Add d picture image
 0.1.8   2020-08-22  Add precision and see r menu items
 0.1.9   2020-08-24  #1 Make changes re specification
+0.1.10  2020-08-25  #1 Added New Edition
 
 */
 //#endregion 
 
-let version = '0.1.8';
+let version = '0.1.10';
 
 // 'use strict';
 $(function() {

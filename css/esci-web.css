@@ -15,6 +15,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.5   2020-08-07  More slight adjustments to right panel
 0.1.8
 0.1.9   2020-08-24  #1 Make changes re specification
+0.1.10  2020-08-25  #1 Added New Edition
 
 #endregion */
 
@@ -105,6 +106,21 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 #itnsblurb {
   margin-top: 2rem;
   font-size: 1.8rem;
+}
+
+#itnsoverlaytext {
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  text-align: center;
+  margin-top: -18rem;
+  margin-left: 0.2rem;
+  height: 4rem;
+  background-color: #DBF9DB;
+  transform: rotate(20deg);
+  color: firebrick;
+  font-weight: bold;
 }
 
 #escitext {
