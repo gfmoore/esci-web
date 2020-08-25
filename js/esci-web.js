@@ -20,11 +20,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.8   2020-08-22  Add precision and see r menu items
 0.1.9   2020-08-24  #1 Make changes re specification
 0.1.10  2020-08-25  #1 Added New Edition
+0.1.11  2020-08-25  #? Split see r into 2 menu items
 
 */
 //#endregion 
 
-let version = '0.1.10';
+let version = '0.1.11';
 
 // 'use strict';
 $(function() {
@@ -107,11 +108,11 @@ $(function() {
   })
 
   $('#menu5').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-see-r/';
+    window.location.href = 'https://gfmoore.github.io/esci-correlation/';
   })
 
   $('#menu6').on('click', function() {
-    //window.location.href = 'https://';
+    window.location.href = 'https://gfmoore.github.io/dance-r/';
   })
 
 
