@@ -21,11 +21,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.9   2020-08-24  #1 Make changes re specification
 0.1.10  2020-08-25  #1 Added New Edition
 0.1.11  2020-08-25  #? Split see r into 2 menu items
+0.1.12  2020-08-26  #4 Tips added
 
 */
 //#endregion 
 
-let version = '0.1.11';
+let version = '0.1.12';
 
 // 'use strict';
 $(function() {
@@ -61,7 +62,6 @@ $(function() {
   $menus.on('mouseenter', function() {
     //$bookimage.fadeOut(100);
 
-    lg($(this).prop('id'));
     if ($(this).prop('id') === 'menu1') {
       $menuitem1.fadeIn(500);
     }
@@ -122,23 +122,24 @@ $(function() {
     Tipped.setDefaultSkin('esci');
 
     //heading section
-    Tipped.create('#logo', 'Version: '+version, { skin: 'red', size: 'xlarge' });
-    Tipped.create('#tooltipsonoff', 'Allow tooltips on or off, default is off!', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    Tipped.create('#logo',          'Version: '+version,                              { skin: 'red', size: 'versionsize', behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+  
+    Tipped.create('#tooltipsonoff', 'Tips on/off, default is off!',                   { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-    Tipped.create('#mainheading', 'From The New Statistics: ', { skin: 'esci', size: 'xlarge', showDelay: 750 });
-    Tipped.create('#subheading', 'https://thenewstatistics.com', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    Tipped.create('.headingtip',    'https://thenewstatistics.com',                   { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-    Tipped.create('#menu1', 'This page takes you to where you can investigate and experiement with sampling from a distribution. It includes the dance of the means and the dance of the p values.', { skin: 'esci', size: 'xlarge', showDelay: 750 });
-    Tipped.create('#menu2', 'This page takes you to where you can investigate the normal and Student t distribution.', { skin: 'esci', size: 'xlarge', showDelay: 750 });
-    Tipped.create('#menu3', 'This page goes nowhere...yet :)', { skin: 'esci', size: 'xlarge', showDelay: 750 });
-    // Tipped.create('#', '', { skin: 'esci', size: 'xlarge', showDelay: 750 });
-    // Tipped.create('#', '', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    Tipped.create('.hometip',       'Click to return to esci Home',                   { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-    // Tipped.create('#', '', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    
+    Tipped.create('#menu1', 'Investigate sampling. See dance of the means, dance of the CIs, dance of the <em>p</em> values, and other goodies. ',  { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#menu2', 'Investigate normal and Student <em>t</em> distributions. Find areas and critical values.',                             { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#menu3', "Investigate how values of Cohen's <em>d</em> relate to distributions and areas.",                                      { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#menu4', 'Find <em>N</em> required to achieve desired target precision.',                                                        { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#menu5', 'See a number of scatter plots for any chosen correlation <em>r</em>.',                                                 { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#menu6', 'Investigate sampling of correlation values. See scatter plots and dances.',                                            { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-
-    //footer
-    Tipped.create('#footerlink', 'Return to the New Statistics website. ', { skin: 'esci', size: 'xlarge', showDelay: 750 });
+    //spare
+    // Tipped.create('. tip', '', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     Tipped.disable('[data-tooltip]');
   }
