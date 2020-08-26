@@ -18,11 +18,28 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.10  2020-08-25  #1 Added New Edition
 0.1.11  2020-08-25  #? Split see r into 2 menu items
 0.1.12  2020-08-26  #4 Tips added
+0.1.13  2020-08-26  #3 Tweaks to words and colour
 
 #endregion */
 
 
 /*-------------------------------------------------------------------------------------------*/
+
+.black {
+  color: black;
+}
+
+.red {
+  color:red;
+}
+
+.darkgrey {
+  color: darkgrey;
+}
+
+.blue {
+  color: blue;
+}
 
 /*-------------------------------------Menu items--------------------------------------------*/
 
@@ -105,9 +122,13 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 }
 
 
-#itnsblurb {
+.itnsblurb {
   margin-top: 2rem;
   font-size: 1.8rem;
+}
+
+#itnsblurbline2 {
+  margin-left: 1rem;
 }
 
 #itnsoverlaytext {
@@ -132,5 +153,9 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 .esciblurb {
   margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+li {
   font-size: 1.8rem;
 }

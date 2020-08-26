@@ -22,11 +22,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.10  2020-08-25  #1 Added New Edition
 0.1.11  2020-08-25  #? Split see r into 2 menu items
 0.1.12  2020-08-26  #4 Tips added
+0.1.13  2020-08-26  #3 Tweaks to words and colour
 
 */
 //#endregion 
 
-let version = '0.1.12';
+let version = '0.1.13';
 
 // 'use strict';
 $(function() {

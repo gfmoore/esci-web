@@ -21,6 +21,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.10  2020-08-25  #1 Added New Edition
 0.1.11  2020-08-25  #? Split see r into 2 menu items
 0.1.12  2020-08-26  #4 Tips added
+0.1.13  2020-08-26  #3 Tweaks to words and colour
 -->
 <!--endregion -->
 
@@ -78,32 +79,32 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
         <!---------------------------------Main menu items---------------------------->
         <div id=mainmenu>
 
-          <div class=menus id=menu1 data-tooltip>dances beta</div>
+          <div class=menus id=menu1 data-tooltip>dances <span class=darkgrey>beta</span></div>
           <div id=menuitem1 class=menuitems>
             <div><img id=dances class=menuimage src=./images/dances.png alt='image of dances screen'></div>
           </div>
 
-          <div class=menus id=menu2 data-tooltip>distributions beta</div>
+          <div class=menus id=menu2 data-tooltip>distributions <span class=darkgrey>beta</span></div>
           <div id=menuitem2 class=menuitems>
             <div><img id=distributions class=menuimage src=./images/distribution.png alt='image of distributions screen'></div>
           </div>
 
-          <div class=menus id=menu3 data-tooltip><em>d</em> picture beta</div>
+          <div class=menus id=menu3 data-tooltip><em>d</em> picture <span class=darkgrey>beta</span></div>
           <div id=menuitem3 class=menuitems>
             <div><img id=distributions class=menuimage src=./images/dpicture.png alt='image of distributions screen'></div>
           </div>
 
-          <div class=menus id=menu4 data-tooltip>precision for planning (in development) </div>
+          <div class=menus id=menu4 data-tooltip>precision for planning <span class=darkgrey>(in development)</span> </div>
           <div id=menuitem4 class=menuitems>
             <div><img id=distributions class=menuimage src= alt='image of distributions screen'></div>
           </div>
 
-          <div class=menus id=menu5 data-tooltip>correlation (in development)</div>
+          <div class=menus id=menu5 data-tooltip>correlation <span class=darkgrey>(in development)</span></div>
           <div id=menuitem5 class=menuitems>
             <div><img id=distributions class=menuimage src= alt='image of distributions screen'></div>
           </div>
 
-          <div class=menus id=menu6 data-tooltip>dance <em>r</em> (in development)</div>
+          <div class=menus id=menu6 data-tooltip>dance <em>r</em> <span class=darkgrey>(in development)</span></div>
           <div id=menuitem6 class=menuitems>
             <div><img id=distributions class=menuimage src= alt='image of distributions screen'></div>
           </div>
@@ -118,8 +119,10 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
       <div id=rightpanel>
         <div id=rightpanelgrid>
           <div><img id=bkimage src=./images/ITNS-the-cover-2-Feb-16-large-low-res.png alt='image of the front cover of The New Statistics book'></div>
-          <div id=itnsblurb>Information about the first edition, and blog, at <a href=https://www.thenewstatistics.com>www.thenewstatistics.com</a></div>
-          
+          <div>
+            <div class=itnsblurb>Information about the first edition, and blog, </div>
+            <div class=itnsblurb id=itnsblurbline2>at <a href=https://www.thenewstatistics.com>www.thenewstatistics.com</a></div>
+          </div>
           <div id=itnsoverlaytext>Second edition due 2021</div>
           <div></div>
 
@@ -127,9 +130,14 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
           <div id=escitext>exploratory software for confidence intervals</div>          
         </div>
 
-        <div class=esciblurb>esci software is in development for the second edition. There are two components:</div>
-        <div class=esciblurb>esci in R, running in jamovi, for data analysis and great graphs with CIs, by Robert Calin-Jageman</div>        
-        <div class=esciblurb>  esci web in javascript, for statistical dances and interactive graphical tools, by Gordon Moore</div>
+        <div class='esciblurb darkgrey'><span class=blue>esci</span> software is in development for the second edition. There are two components:</div>
+        <div class='esciblurb darkgrey'><span class=blue><a href='https://www.thenewstatistics.com'>esci</a> in R</span>, running in <span class=blue>jamovi</span>,</div>  
+          <ul class=darkgrey><li>for data analysis and great graphs with CIs, by Robert Calin-Jageman</li></ul>       
+        <div class='esciblurb darkgrey'><span class=blue>esci web in JavaScript</span>, by Gordon Moore,</div> 
+          <ul class=darkgrey>
+            <li>for statistical dances and interactive graphical tools</li> 
+            <li>use buttons at left to go to the pages</li>
+          </ul>
 
     </div>
 
