@@ -24,11 +24,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.12  2020-08-26  #4 Tips added
 0.1.13  2020-08-26  #3 Tweaks to words and colour
 0.1.14  2020-08-27  #3 Tweaks to words and colour
+0.1.15  2020-08-27  #4 Tooltip disable fix
 
 */
 //#endregion 
 
-let version = '0.1.14';
+let version = '0.1.15';
 
 // 'use strict';
 $(function() {
@@ -150,6 +151,7 @@ $(function() {
     if (tooltipson) {
       tooltipson = false;
       $('#tooltipsonoff').css('background-color', 'lightgrey');
+      Tipped.disable('[data-tooltip]');
     }
     else {
       tooltipson = true;
