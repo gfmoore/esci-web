@@ -25,11 +25,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.13  2020-08-26  #3 Tweaks to words and colour
 0.1.14  2020-08-27  #3 Tweaks to words and colour
 0.1.15  2020-08-27  #4 Tooltip disable fix
-
+0.1.16  2020-08-28  #5 Basic In development page added.
 */
 //#endregion 
 
-let version = '0.1.15';
+let version = '0.1.16';
 
 // 'use strict';
 $(function() {
@@ -107,15 +107,18 @@ $(function() {
   })
 
   $('#menu4').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-precision/';
+    //window.location.href = 'https://gfmoore.github.io/esci-precision/';
+    window.location.href = './InDevelopment.html';
   })
 
   $('#menu5').on('click', function() {
     window.location.href = 'https://gfmoore.github.io/esci-correlation/';
+
   })
 
   $('#menu6').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/dance-r/';
+    //window.location.href = 'https://gfmoore.github.io/dance-r/';
+    window.location.href = './InDevelopment.html';
   })
 
 

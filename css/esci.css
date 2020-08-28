@@ -10,6 +10,8 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 0.0.1       Initial version
 
+0.1.16  2020-08-28  #5 esci-web Basic In development page added.
+
 #endregion */
 
 
@@ -226,4 +228,17 @@ input[type=text] {
 .tpd-size-versionsize .tpd-spinner-spin:after {
   width: 22px;
   height: 22px;
+}
+
+
+/*-----------------------------------Message page-----------------------------------*/
+
+#message {
+  margin: 3rem;
+  padding: 1rem;
+  font-size: 3.0rem;
+  border: solid 2px red;
+  width: 80rem;
+  height: 10rem;
+  text-align: center;
 }
