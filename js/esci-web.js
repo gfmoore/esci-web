@@ -108,7 +108,7 @@ $(function() {
 
   $('#menu4').on('click', function() {
     //window.location.href = 'https://gfmoore.github.io/esci-precision/';
-    window.location.href = './InDevelopment.html';
+    window.location.href = 'https://gfmoore.github.io/esci-web/InDevelopment.html';
   })
 
   $('#menu5').on('click', function() {
@@ -118,7 +118,7 @@ $(function() {
 
   $('#menu6').on('click', function() {
     //window.location.href = 'https://gfmoore.github.io/dance-r/';
-    window.location.href = './InDevelopment.html';
+    window.location.href = 'https://gfmoore.github.io/esci-web/InDevelopment.html';
   })
 
 
