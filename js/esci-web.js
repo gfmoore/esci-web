@@ -26,10 +26,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.14  2020-08-27  #3 Tweaks to words and colour
 0.1.15  2020-08-27  #4 Tooltip disable fix
 0.1.16  2020-08-28  #5 Basic In development page added.
+0.1.17  2020-08-28  #5 v2 of Basic In development message added.
 */
 //#endregion 
 
-let version = '0.1.16';
+let version = '0.1.17';
 
 // 'use strict';
 $(function() {
@@ -60,6 +61,7 @@ $(function() {
 
   function initialise() {
     $menuitems.hide();
+    $('#message').hide();
   }
 
   $menus.on('mouseenter', function() {
@@ -108,7 +110,7 @@ $(function() {
 
   $('#menu4').on('click', function() {
     //window.location.href = 'https://gfmoore.github.io/esci-precision/';
-    window.location.href = 'https://gfmoore.github.io/esci-web/InDevelopment.html';
+    $('#message').show();
   })
 
   $('#menu5').on('click', function() {
@@ -118,7 +120,8 @@ $(function() {
 
   $('#menu6').on('click', function() {
     //window.location.href = 'https://gfmoore.github.io/dance-r/';
-    window.location.href = 'https://gfmoore.github.io/esci-web/InDevelopment.html';
+    $('#message').show();
+
   })
 
 
@@ -171,6 +174,10 @@ $(function() {
 
   /*---------------------------------------------------------  resize event -----------------------------------------------*/
   
+  $('#message').on('click', function() {
+    $('#message').hide();
+  })
+
   // $(window).bind('resize', function(e){
   //   window.resizeEvt;
   //   $(window).resize(function(){

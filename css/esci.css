@@ -11,6 +11,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.0.1       Initial version
 
 0.1.16  2020-08-28  #5 esci-web Basic In development page added.
+0.1.17  2020-08-28  #5 v2 of Basic In development message added.
 
 #endregion */
 
@@ -239,6 +240,17 @@ input[type=text] {
   font-size: 3.0rem;
   border: solid 2px red;
   width: 80rem;
-  height: 10rem;
+  height: 15rem;
   text-align: center;
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  background-color: lightyellow;
+  border-radius: 20px;
+
+}
+
+#close {
+  color: black;
+  padding: 3rem;
 }
