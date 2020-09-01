@@ -27,10 +27,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.15  2020-08-27  #4 Tooltip disable fix
 0.1.16  2020-08-28  #5 Basic In development page added.
 0.1.17  2020-08-28  #5 v2 of Basic In development message added.
+0.1.18  2020-09-01  #5 Added correlation to disabled menu item.
 */
 //#endregion 
 
-let version = '0.1.17';
+let version = '0.1.18';
 
 // 'use strict';
 $(function() {
@@ -114,8 +115,8 @@ $(function() {
   })
 
   $('#menu5').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-correlation/';
-
+    //window.location.href = 'https://gfmoore.github.io/esci-correlation/';
+    $('#message').show();
   })
 
   $('#menu6').on('click', function() {
