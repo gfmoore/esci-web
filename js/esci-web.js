@@ -106,7 +106,7 @@ $(function() {
   })
 
   $('#menu3').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-d-picture/';
+    window.location.href = 'https://www.esci-d-picture.thenewstatistics.com/';
   })
 
   $('#menu4').on('click', function() {
