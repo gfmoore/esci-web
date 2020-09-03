@@ -28,10 +28,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.16  2020-08-28  #5 Basic In development page added.
 0.1.17  2020-08-28  #5 v2 of Basic In development message added.
 0.1.18  2020-09-01  #5 Added correlation to disabled menu item.
+
+1.0.0   2020-09-03  Version 1.0.0
 */
 //#endregion 
 
-let version = '0.1.18';
+let version = '1.0.0';
 
 // 'use strict';
 $(function() {
