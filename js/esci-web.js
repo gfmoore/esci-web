@@ -30,10 +30,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.18  2020-09-01  #5 Added correlation to disabled menu item.
 
 1.0.0   2020-09-03  Version 1.0.0
+1.0.1   2020-09-05  Release correlation beta
 */
 //#endregion 
 
-let version = '1.0.0';
+let version = '1.0.1';
 
 // 'use strict';
 $(function() {
@@ -117,8 +118,7 @@ $(function() {
   })
 
   $('#menu5').on('click', function() {
-    //window.location.href = 'https://gfmoore.github.io/esci-correlation/';
-    $('#message').show();
+    window.location.href = 'https://gfmoore.github.io/esci-correlation/';
   })
 
   $('#menu6').on('click', function() {
