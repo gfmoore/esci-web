@@ -32,12 +32,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.0   2020-09-03  Version 1.0.0
 1.0.1   2020-09-05  Release correlation beta
 1.0.2   2020-09-06  Make the releases 1.0.0
-
-1.0.3   17 Oct 2020  Add dance-r menu item
+1.0.3   17 Oct 2020 Add dance-r menu item
+1.0.4   18 Oct 2020 Did tweaks to the menu image display to make smoother  
 */
 //#endregion 
 
-let version = '1.0.3';
+let version = '1.0.4';
 
 // 'use strict';
 $(function() {
@@ -48,8 +48,17 @@ $(function() {
 
   //cache dom elements
   const $mainmenu = $('#mainmenu');
+  const $leftpanel = $('#leftpanel');
+  const $rightpanel = $('#rightpanel');
   const $menus = $('.menus');
   const $bookimage = $('#bookimage');
+
+  const $menu1 = $('#menu1');
+  const $menu2 = $('#menu2');
+  const $menu3 = $('#menu3');
+  const $menu4 = $('#menu4');
+  const $menu5 = $('#menu5');
+  const $menu6 = $('#menu6');
 
   const $menuitems = $('.menuitems');
   const $menuitem1 = $('#menuitem1');
@@ -58,6 +67,11 @@ $(function() {
   const $menuitem4 = $('#menuitem4');
   const $menuitem5 = $('#menuitem5');
   const $menuitem6 = $('#menuitem6');
+
+  //const $menuimage = $('.menuimage');
+
+  let menubarvisible   = false;
+  let menuimagevisible = false;
 
   //#endregion
 
@@ -72,36 +86,65 @@ $(function() {
   }
 
   $menus.on('mouseenter', function() {
-    //$bookimage.fadeOut(100);
-
+    $menus.css('background-color', 'lemonchiffon');
+    $menuitems.fadeOut(0);
     if ($(this).prop('id') === 'menu1') {
+      $menu1.css('background-color', 'lightgreen');
       $menuitem1.fadeIn(500);
+      //$menuitem1.css('background-color', 'lightgreen');
     }
     if ($(this).prop('id') === 'menu2') {
+      $menu2.css('background-color', 'lightgreen');
       $menuitem2.fadeIn(500);
+      //$menuitem2.css('background-color', 'lightgreen');
     }
     if ($(this).prop('id') === 'menu3') {
+      $menu3.css('background-color', 'lightgreen');
       $menuitem3.fadeIn(500);
+      //$menuitem3.css('background-color', 'lightgreen');
     }
     if ($(this).prop('id') === 'menu4') {
+      $menu4.css('background-color', 'lightgreen');
       $menuitem4.fadeIn(500);
+      //$menuitem4.css('background-color', 'lightgreen');
     }
     if ($(this).prop('id') === 'menu5') {
+      $menu5.css('background-color', 'lightgreen');
       $menuitem5.fadeIn(500);
+      //$menuitem5.css('background-color', 'lightgreen');
     }
     if ($(this).prop('id') === 'menu6') {
+      $menu6.css('background-color', 'lightgreen');
       $menuitem6.fadeIn(500);
+      //$menuitem6.css('background-color', 'lightgreen');
     }
-
   })
 
-  $menus.on('mouseleave', function() {
-     $menuitems.fadeOut(0);
+
+  $menus.on('mouseleave', function() {  //leave the menubar
+    menubarvisible = false;
   })
 
-  $mainmenu.on('mouseleave', function() {
-    $bookimage.fadeIn(0);
+
+  //turn off menu images for these two cases
+
+  $rightpanel.on('mouseenter', function() {
+    $menuitems.fadeOut(0); 
   })
+
+  $leftpanel.on('mouseleave', function() {
+    $menuitems.fadeOut(0);
+    $menus.css('background-color', 'lemonchiffon');
+  })
+
+  // $leftpanel.on('mousemove', function(e) {  //have to see if 400px works in all cases?
+  //   if (e.pageX > 400) {
+  //     $menuitems.fadeOut(0);
+  //     $menus.css('background-color', 'lemonchiffon');
+  //   } 
+  // })
+
+
 
   $('#menu1').on('click', function() {
     window.location.href = 'https://www.esci-dances.thenewstatistics.com/';

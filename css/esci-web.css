@@ -21,6 +21,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.13  2020-08-26  #3 Tweaks to words and colour
 0.1.14  2020-08-27  #3 Tweaks to words and colour
 0.1.15
+1.0.4   18 Oct 2020 Did tweaks to the menu image display to make smoother  
 
 #endregion */
 
@@ -70,6 +71,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   padding-top: 0.8rem;
   padding-bottom: 1.0rem;
   font-size: 1.8rem;
+}
+
+#menubottom {
+  background-color: lightyellow !important;
+  border: none;
 }
 
 .menus:hover {
