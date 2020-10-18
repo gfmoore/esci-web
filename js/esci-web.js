@@ -32,10 +32,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.0   2020-09-03  Version 1.0.0
 1.0.1   2020-09-05  Release correlation beta
 1.0.2   2020-09-06  Make the releases 1.0.0
+
+1.0.3   17 Oct 2020  Add dance-r menu item
 */
 //#endregion 
 
-let version = '1.0.2';
+let version = '1.0.3';
 
 // 'use strict';
 $(function() {
@@ -123,9 +125,7 @@ $(function() {
   })
 
   $('#menu6').on('click', function() {
-    //window.location.href = 'https://gfmoore.github.io/dance-r/';
-    $('#message').show();
-
+    window.location.href = 'https://gfmoore.github.io/esci-dance-r/';
   })
 
 
