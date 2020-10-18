@@ -146,7 +146,13 @@ $(function() {
 
 
 
+  //menu bar
   $('#menu1').on('click', function() {
+    window.location.href = 'https://www.esci-dances.thenewstatistics.com/';
+  })
+
+  //image
+  $('#dances').on('click', function() {
     window.location.href = 'https://www.esci-dances.thenewstatistics.com/';
   })
 
@@ -154,7 +160,15 @@ $(function() {
     window.location.href = 'https://www.esci-distributions.thenewstatistics.com/';
   })
 
+  $('#distributions').on('click', function() {
+    window.location.href = 'https://www.esci-distributions.thenewstatistics.com/';
+  })
+
   $('#menu3').on('click', function() {
+    window.location.href = 'https://www.esci-d-picture.thenewstatistics.com/';
+  })
+
+  $('#d-picture').on('click', function() {
     window.location.href = 'https://www.esci-d-picture.thenewstatistics.com/';
   })
 
@@ -163,14 +177,26 @@ $(function() {
     $('#message').show();
   })
 
+  $('#precision').on('click', function() {
+    //window.location.href = 'https://gfmoore.github.io/esci-precision/';
+    $('#message').show();
+  })
+
   $('#menu5').on('click', function() {
     window.location.href = 'https://gfmoore.github.io/esci-correlation/';
   })
+
+  $('#correlation').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-correlation/';
+  }) 
 
   $('#menu6').on('click', function() {
     window.location.href = 'https://gfmoore.github.io/esci-dance-r/';
   })
 
+  $('#dance-r').on('click', function() {
+    window.location.href = 'https://gfmoore.github.io/esci-dance-r/';
+  })
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/
 
