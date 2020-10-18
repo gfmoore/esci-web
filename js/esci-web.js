@@ -34,10 +34,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.2   2020-09-06  Make the releases 1.0.0
 1.0.3   17 Oct 2020 Add dance-r menu item
 1.0.4   18 Oct 2020 Did tweaks to the menu image display to make smoother  
+1.0.5   18 Oct 2020 Make images clickable
 */
 //#endregion 
 
-let version = '1.0.4';
+let version = '1.0.5';
 
 // 'use strict';
 $(function() {
