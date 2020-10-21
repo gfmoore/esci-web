@@ -35,10 +35,11 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.3   17 Oct 2020 Add dance-r menu item
 1.0.4   18 Oct 2020 Did tweaks to the menu image display to make smoother  
 1.0.5   18 Oct 2020 Make images clickable
+1.0.6   21 Oct 2020 Change menu links for www.thenewstatistics.com
 */
 //#endregion 
 
-let version = '1.0.5';
+let version = '1.0.6';
 
 // 'use strict';
 $(function() {
@@ -174,29 +175,29 @@ $(function() {
   })
 
   $('#menu4').on('click', function() {
-    //window.location.href = 'https://gfmoore.github.io/esci-precision/';
+    //window.location.href = 'https://www.esci-precision.thenewstatistics.com/';
     $('#message').show();
   })
 
   $('#precision').on('click', function() {
-    //window.location.href = 'https://gfmoore.github.io/esci-precision/';
+    //window.location.href = 'https://www.esci-precision.thenewstatistics.com/';
     $('#message').show();
   })
 
   $('#menu5').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-correlation/';
+    window.location.href = 'https://www.esci-correlation.thenewstatistics.com/';
   })
 
   $('#correlation').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-correlation/';
+    window.location.href = 'https://www.esci-correlation.thenewstatistics.com/';
   }) 
 
   $('#menu6').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-dance-r/';
+    window.location.href = 'https://www.esci-dance-r.thenewstatistics.com/';
   })
 
   $('#dance-r').on('click', function() {
-    window.location.href = 'https://gfmoore.github.io/esci-dance-r/';
+    window.location.href = 'https://www.esci-dance-r.thenewstatistics.com/';
   })
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/
