@@ -46,11 +46,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.1       21 Oct 2020 Nudge bars somehow too low, fixed.
 
 1.1.0  6 Nov 2020 Rationalised into one repository
+1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
 
 */
 //#endregion 
 
-let version = '1.1.0';
+let version = '1.1.1';
 
 'use strict';
 $(function() {

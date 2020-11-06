@@ -117,9 +117,7 @@ Start using version history now to record changes and fixes
 0.3.68    2020-07-19  CI#15 Fixed bugs in p values and added delay to popups. CI#22 Another go at Rectangular
 0.3.69    2020-07-20  CI#15 Added more control to dance of p values check on. Added a volume control as well. (Seems to be a delay issue in playing sound too fast?)
 0.3.70    2020-07-20  CI#22 Fixed bubbles above rectangle - spelling dwawit and drwaIt - doh
-*/
-//#endregion 
-/*
+
 0.9.0 Beta  2020-07-22 Beta version
 0.9.1       2020-07-23 Edited tooltips, added P value options
 0.9.2       2020-07-23 Dances#15 New sound library - Howler - used.
@@ -142,12 +140,17 @@ Start using version history now to record changes and fixes
 0.9.18      2020-08-21 #32 Revert changes to inset margin and scale, restore code for recolour
 0.9.19      2020-08-24 #35 Dont allow mean heap if p values on + remove hyphen
 0.9.20      2020-08-25 #37 Red panel numbers
+*/
+//#endregion 
+/*
 
 1.0.0       2020-09-03 Version 1.0.0
 
 1.1.0  6 Nov 2020 Rationalised into one repository
+1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+
 */
-let version = '1.1.0';
+let version = '1.1.1';
  
 'use strict';
 
@@ -3280,7 +3283,7 @@ $(function() {
     Tipped.create('#tooltipsonoff',        'Tips on/off, default is off!',                                  { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
 
-    Tipped.create('.headingtip',           'https://thenewstatistics.com ',                                 { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    //Tipped.create('.headingtip',           'https://thenewstatistics.com ',                                 { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     Tipped.create('.hometip',               'Click to return to esci Home',                                 { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 

@@ -40,10 +40,12 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 1.0.0   19 Oct 2020 Version 1.0.0
 
 1.1.0  6 Nov 2020 Rationalised into one repository
+1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+
 */
 //#endregion 
 
-let version = '1.1.0';
+let version = '1.1.1';
 
 let testing = false;
 
@@ -1774,7 +1776,7 @@ $(function() {
   
     Tipped.create('#tooltipsonoff', 'Tips on/off, default is off!',                               { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-    Tipped.create('.headingtip',    'https://thenewstatistics.com',                               { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    //Tipped.create('.headingtip',    'https://thenewstatistics.com',                               { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     Tipped.create('.hometip',       'Click to return to esci Home',                               { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
