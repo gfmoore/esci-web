@@ -28,10 +28,10 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 1.1.0  6 Nov 2020 Rationalised into one repository
 
+
 #endregion */
 
-
-/*-------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------*/
 
 .black {
   color: black;
@@ -95,7 +95,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   background-color: green;
 }
 
-.menuitems {
+.menuimages {
   border: 1px solid green;
   border-radius: 15px;
   margin-left: 5px;
@@ -107,7 +107,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   font-size: 2.0rem;
 }
 
-.menuimage {
+.mimage {
   margin-top: 0rem;
   width: 37rem;
   height: 20rem;

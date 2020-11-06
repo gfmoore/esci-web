@@ -56,101 +56,83 @@ $(function() {
   const $mainmenu = $('#mainmenu');
   const $leftpanel = $('#leftpanel');
   const $rightpanel = $('#rightpanel');
+
   const $menus = $('.menus');
-  const $bookimage = $('#bookimage');
 
-  const $menu1 = $('#menu1');
-  const $menu2 = $('#menu2');
-  const $menu3 = $('#menu3');
-  const $menu4 = $('#menu4');
-  const $menu5 = $('#menu5');
-  const $menu6 = $('#menu6');
+  const $menu1 = $('#menu1');  //dances
+  const $menu2 = $('#menu2');  //distributions
+  const $menu3 = $('#menu3');  //d picture
+  const $menu4 = $('#menu4');  //precision
+  const $menu5 = $('#menu5');  //correlation
+  const $menu6 = $('#menu6');  //dance-r
 
-  const $menuitems = $('.menuitems');
-  const $menuitem1 = $('#menuitem1');
-  const $menuitem2 = $('#menuitem2');
-  const $menuitem3 = $('#menuitem3');
-  const $menuitem4 = $('#menuitem4');
-  const $menuitem5 = $('#menuitem5');
-  const $menuitem6 = $('#menuitem6');
 
-  //const $menuimage = $('.menuimage');
+  const $menuimages = $('.menuimages');
 
-  let menubarvisible   = false;
-  let menuimagevisible = false;
+  const $menuimage1 = $('#menuimage1');
+  const $menuimage2 = $('#menuimage2');
+  const $menuimage3 = $('#menuimage3');
+  const $menuimage4 = $('#menuimage4');
+  const $menuimage5 = $('#menuimage5');
+  const $menuimage6 = $('#menuimage6');
 
   //#endregion
 
-
-  setTooltips();
-
   initialise();
-
   function initialise() {
-    $menuitems.hide();
+    setTooltips();
+
+    $menuimages.hide();
     $('#message').hide();
   }
 
-  $menus.on('mouseenter', function() {
-    $menus.css('background-color', 'lemonchiffon');
-    $menuitems.fadeOut(0);
-    if ($(this).prop('id') === 'menu1') {
-      $menu1.css('background-color', 'lightgreen');
-      $menuitem1.fadeIn(500);
-      //$menuitem1.css('background-color', 'lightgreen');
-    }
-    if ($(this).prop('id') === 'menu2') {
-      $menu2.css('background-color', 'lightgreen');
-      $menuitem2.fadeIn(500);
-      //$menuitem2.css('background-color', 'lightgreen');
-    }
-    if ($(this).prop('id') === 'menu3') {
-      $menu3.css('background-color', 'lightgreen');
-      $menuitem3.fadeIn(500);
-      //$menuitem3.css('background-color', 'lightgreen');
-    }
-    if ($(this).prop('id') === 'menu4') {
-      $menu4.css('background-color', 'lightgreen');
-      $menuitem4.fadeIn(500);
-      //$menuitem4.css('background-color', 'lightgreen');
-    }
-    if ($(this).prop('id') === 'menu5') {
-      $menu5.css('background-color', 'lightgreen');
-      $menuitem5.fadeIn(500);
-      //$menuitem5.css('background-color', 'lightgreen');
-    }
-    if ($(this).prop('id') === 'menu6') {
-      $menu6.css('background-color', 'lightgreen');
-      $menuitem6.fadeIn(500);
-      //$menuitem6.css('background-color', 'lightgreen');
-    }
+  $menu1.on('mouseenter', function() {
+    $menuimage1.show();
   })
 
-
-  $menus.on('mouseleave', function() {  //leave the menubar
-    menubarvisible = false;
+  $menu1.on('mouseleave', function() {
+    $menuimage1.hide();
   })
 
-
-  //turn off menu images for these two cases
-
-  $rightpanel.on('mouseenter', function() {
-    $menuitems.fadeOut(0); 
+  $menu2.on('mouseenter', function() {
+    $menuimage2.show();
   })
 
-  $leftpanel.on('mouseleave', function() {
-    $menuitems.fadeOut(0);
-    $menus.css('background-color', 'lemonchiffon');
+  $menu2.on('mouseleave', function() {
+    $menuimage2.hide();
+  })  
+
+  $menu3.on('mouseenter', function() {
+    $menuimage3.show();
   })
 
-  // $leftpanel.on('mousemove', function(e) {  //have to see if 400px works in all cases?
-  //   if (e.pageX > 400) {
-  //     $menuitems.fadeOut(0);
-  //     $menus.css('background-color', 'lemonchiffon');
-  //   } 
-  // })
+  $menu3.on('mouseleave', function() {
+    $menuimage3.hide();
+  })  
 
+  $menu4.on('mouseenter', function() {
+    $menuimage4.show();
+  })
 
+  $menu4.on('mouseleave', function() {
+    $menuimage4.hide();
+  })  
+
+  $menu5.on('mouseenter', function() {
+    $menuimage5.show();
+  })
+
+  $menu5.on('mouseleave', function() {
+    $menuimage5.hide();
+  })  
+
+  $menu6.on('mouseenter', function() {
+    $menuimage6.show();
+  })
+
+  $menu6.on('mouseleave', function() {
+    $menuimage6.hide();
+  })  
 
   //menu bar
   $('#menu1').on('click', function() {
