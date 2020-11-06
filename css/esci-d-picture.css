@@ -1,0 +1,379 @@
+/*
+Program       esci-d-picture.css
+Author        Gordon Moore
+Date          11-August-2020
+Description   CSS for esci d-pictures
+Licence       GNU General Public LIcence Version 3, 29 June 2007
+*/
+
+/* #region Version history
+
+0.0.1   Initial version
+
+0.2.0   2020-08-17  Version 2 
+0.2.2   2020-08-19  #3 Tweaks to panel font sizes etc
+0.2.6
+
+1.0.0  2020-09-03 Version 1.0.0
+
+#endregion */
+
+
+
+
+/*------------------------------override on ion slider-----------------------------------*/
+/*blank out end labels*/
+.irs--big .irs-min {
+  color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.irs--big .irs-max {
+  color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.irs-grid-text {
+  font-size: 1.4rem;
+}
+
+/*---------------------------------icons-----------------------------------------------------------*/
+
+.icons {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/*----------------------------------Override left panel--------------------------------------------*/
+
+#leftpanel {
+  border: 2px solid black;
+}
+
+#header {
+  border: 0px solid black;
+}
+
+#breadcrumbs {
+  border: 1px solid black;
+  font-size: 1.5rem;
+}
+
+/*----------------------------------Panels-----------------------------------------------------*/
+
+/*overrides*/
+
+#areas, #psuperioritypanel, #nrequiredpanel {
+  font-size: 1.6rem;
+}
+
+/* #panels {
+}  */
+
+.red {
+  color: red;
+}
+
+
+.slidericons {
+  margin-top: 2.8rem;
+}
+
+.slidericons:hover {
+  background-color: lightgray;
+}
+
+.slidericons:active {
+  background-color: darkgrey;
+}
+
+/*----------------------Panel 1 Areas-------------------------------------------------------------------*/
+
+.areastip {
+  font-size: 1.8rem;
+}
+
+#areas {
+  border: 1px solid black;
+  background-color: #FFCC99; 
+  padding-top: 0.5rem; 
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+#shadelabel {
+  margin-top: 0.0rem;
+  margin-left: 30rem;
+  padding-bottom: 0.5rem;
+}
+
+#areassection {
+  display: grid;
+  grid-template-columns: 24rem 4rem 3rem auto;
+
+}
+
+/*----------------------Panel 2 Probability of Superiority-------------------------------------------------------------------*/
+
+#psuperioritypanel {
+  background-color:#CCFFCC;
+  border: 1px solid black;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 0.5rem;
+}
+
+/*----------------------Panel 3 -------------------------------------------------------------------*/
+
+#nrequiredpanel {
+  background-color:#E6E6FA;
+  border: 1px solid black;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 0.5rem;
+}
+
+
+
+
+/*----------------------------------display---------------------------------------------------------*/
+#rightpanel {
+  border: 1px solid grey;
+  display: grid;
+  grid-template-rows: 0.1rem auto 5rem 2rem 15rem;  /*no topaxis...at moment*/
+}
+
+/*---------------------------------top axis---------------------------------------------------------*/
+
+#topaxis {
+  background-color: white;
+  font-size: 1.0rem;
+  /* border: 1px solid green;  */
+}
+
+.topaxistext {
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.topaxisunits {
+  font-size: 1.8rem;
+  font-weight: bold; 
+}
+
+/*---------------------------------bottom axis---------------------------------------------------------*/
+
+#bottomaxis {
+  background-color: white;
+  font-size: 1.0rem;
+  /* border: 1px solid green; */
+}
+
+.bottomaxistext {
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*----------------------------------pdf-------------------------------------------------------------*/
+
+#pdfdisplay {
+  /* border: 1px solid red;  */
+  background-color: white;
+}
+
+/*attached to the control curve and the cursor */
+.static {
+  cursor: not-allowed;
+}
+
+/*attached to the experimental curve and the cursor */
+.draggable {
+  cursor: move;
+}
+
+
+/*----------------------------------d slider--------------------------------------------------------------*/
+
+#cohensdtitle {
+  font-size: 1.7rem;
+  padding-left: 0rem;
+  padding-top: 2.8rem;
+}
+
+#sliderdisplayarea {
+  position: relative;
+  height:6.0rem;
+}
+
+.icons {
+  margin-top: 2.6rem;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+
+/*----------------NOT USED AT PRESENT------------------------------------------------------------------*/
+/*----------------Panel 1 xbar sd control--------------------------------------------------------------*/
+
+#xbarsdcontroldiv {
+  padding-top: 1rem;
+}
+
+#xbarsdcontrol {
+  background-color: lightskyblue; /*#FFFF99;*/
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  border: 1px solid black;
+  height: 20rem;
+}
+
+#xbarcontrolsliderpanel {
+  display: grid;
+  grid-template-columns: 2.5rem 25rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 0rem;
+}
+
+#xbarcontrolslider {
+  padding-top: -10rem;
+}
+
+#sdcontrolsliderpanel {
+  display: grid;
+  grid-template-columns: 2.5rem 25rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 2rem;
+}
+
+.iconsxbarsdcontrol {
+  /* padding-top: 0.0rem; */
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+
+
+.iconsxbarsdcontrol:hover {
+  background-color: lightgrey;
+}
+
+.iconsxbarsdcontrol:active {
+  background-color: darkgrey;
+}
+
+#xbarcontroldiv {
+padding-top: 3.0rem; 
+margin-left: 0.5rem;
+}
+
+#sdcontroldiv {
+  padding-top: 2.8rem; 
+  margin-left: 0.5rem;
+}
+
+#xbarcontrolval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+#sdcontrolval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+/*----------------Panel 2a xbar sd experimental-------------------------------------------------------------------------*/
+
+#xbarsdexperimentaldiv {
+  padding-top: 1rem;
+}
+
+#xbarsdexperimental {
+  background-color: mistyrose;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  border: 1px solid black;
+  height: 20rem;
+}
+
+#xbarexperimentalsliderpanel {
+  display: grid;
+  grid-template-columns: 2.5rem 25rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 0rem;
+}
+
+#xbarexperimentalslider {
+  padding-top: -10rem;
+}
+
+#sdexperimentalsliderpanel {
+  display: grid;
+  grid-template-columns: 2.5rem 25rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 2rem;
+}
+
+.iconsxbarsdexperimental {
+  /* padding-top: 0.0rem; */
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+
+
+.iconsxbarsdexperimental:hover {
+  background-color: lightgrey;
+}
+
+.iconsxbarsdexperimental:active {
+  background-color: darkgrey;
+}
+
+
+#xbarexperimentaldiv {
+padding-top: 3.0rem; 
+margin-left: 0.5rem;
+}
+
+#sdexperimentaldiv {
+  padding-top: 2.8rem; 
+  margin-left: 0.5rem;
+}
+
+#xbarexperimentalval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+#sdexperimentalval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+/*----------------------Panel 2b xbar abd sd experimental display values only-------------------------------------------------------------------*/
+.xbarsdexperimentaldisplayonlytip {
+  font-size: 1.3rem;
+}
+
+#xbarsdexpdiv {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#xbassdexperimentaldisplayonly {
+  padding-left: 0.5rem;
+  border: 1px solid black;
+  background-color: mistyrose;
+  font-size: 1.7rem;
+}
+
+#showexppanel {
+  font-size: 1.3rem;
+}
+
+/* #showexperimentalsliderpanel {
+
+} */

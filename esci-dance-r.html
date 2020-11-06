@@ -1,0 +1,260 @@
+<!--
+Program       esci-dance-r.html 
+Author        Gordon Moore
+Date          3 September 2020
+Description   A JavaScript implementation of esci r for Introduction to the New Statistics by Geoff Cumming and Robert Calin-Jageman
+Licence       GNU General Public LIcence Version 3, 29 June 2007
+-->
+<!-- #region version history-->
+<!--
+0.0.1   Initial version
+0.0.2   09 Oct 2020 #2 Adjusted control panel as required
+0.0.3   09 Oct 2020 #3 Speed control adjustment
+0.0.4   09 Oct 2020 #4 Resize displays and font sizes positions
+0.0.6   09 Oct 2020 #? Removed three lines from panel 10
+0.0.7
+0.0.8   10 Oct 2020 #2 Changed text to sample in panel 2
+0.0.9
+0.0.10  12 Oct 2020 #2 Added pop on/off and re-arranged items in panel 10
+0.0.14
+0.0.15  14 Oct 2020 Add test option for number of population points
+0.0.17
+
+0.1.8   17 Oct 2020 #15 Added tips
+0.1.9
+
+1.0.0   19 Oct 2020 Version 1
+
+-->
+<!--endregion -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset=utf-8>
+    <!-- <meta name="viewport" content="width=device-width"> not work? allow touch and click to be the same -->
+
+    <!--to fix issue of android chrome reducing font size to tiny (unless big paragraph of text)   -->
+    <meta name="HandheldFriendly" content="true"/>
+    <!--might need this at some point?, though it disables pinch zoom-->
+    <!--<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=yes">-->
+    
+    <!--clear favicon cache-->
+    <link rel="shortcut icon" href="./favicon.ico?v=2">  
+
+    <title>esci-dance r</title>
+
+    <!-- stylesheets -->
+
+    <link href=./css/ion.rangeSlider.css rel=stylesheet type=text/css>
+
+    <link href=./css/tipped.css rel=stylesheet type=text/css />
+ 
+    <link href=./css/esci.css rel=stylesheet type=text/css>
+
+    <link href=./css/esci-dance-r.css rel=stylesheet type=text/css>
+
+    <!-- scripts -->
+    <script src=./js/jquery-3.5.1.min.js></script>
+
+    <script src=./js/jstat.min.js></script>
+
+    <script src=./js/d3.min.js></script>
+
+    <script src=./js/ion.rangeSlider.min.js></script>
+
+    <script src=./js/tipped.min.js></script>
+
+    <script src=./js/esci-dance-r.js></script>
+
+  </head>
+
+  <body>
+
+    <div id=main>
+    <!----------------------------------Left Panel---------------------------------->
+      <div id=leftpanel>
+
+        <div id=header>
+          <div id=logo><img id=logoimg src=./images/logo.png></div>
+          <div id=mainheading class=headingtip data-tooltip>esci web</div>
+          <div id=subheading class=headingtip data-tooltip>dance <em>r</em></div>
+          <div id=tooltipsonoff>?</div>
+        </div>
+        <div id=breadcrumbs><span id=homecrumb class=hometip data-tooltip>Home></span><span id=distributioncrumb data-tooltip> dance <em>r</em></span></div>
+
+        <div id=panels>  
+
+          <div id=tab1text data-tooltip>
+            See <em>r</em> for samples from population with correlation <em>&rho;</em>
+
+            <!-- Change population size <input id=popsize type=input value=5000> -->
+          </div>
+          <!-------------------------------------Tab 1 Panels------------------------------------->        
+
+          <!-----------Tab 1 Panel 1 N------------------------------------------->
+          <div id=N1panel>
+            <div id=N1paneltip data-tooltip><sapn class=red >1 </span></div>
+              
+            <div id=N1sliderpanel>
+              <div id=N1sliderdiv class=N1slidertip data-tooltip><input id=N1slider type=text/></div>
+              <div><img id=N1nudgebackward class="icons slidericons N1slidertip" data-tooltip src=./images/left.png alt='nudge backwards'></div>
+              <div><img id=N1nudgeforward class="icons slidericons N1slidertip" data-tooltip src=./images/right.png alt='nudge forward'></div>
+              <div class=N1labeltip data-tooltip>
+                <div id=Nlabel ><em>N</em></div>
+                <input id=N1val type=text>
+              </div>
+            </div>
+
+          </div>
+
+          <!------------Panel 2 Generate dataset with chosen r------------->
+          <div id=rpanel>
+            <div id=rpaneltip data-tooltip><span class=red >2 </span> Set population correlation  <em>&rho;</em>, see sample correlation <em>r</em></div>
+            <div id=rsliderpanel data-tooltip>
+              <div id=rsliderdiv class=rsliderpaneltip data-tooltip><input id=rslider type=text class=rsliderpaneltip data-tooltip></div>
+              <div class=rsliderpaneltip data-tooltip><img id=rnudgebackward class="icons slidericons" src=./images/left.png alt='nudge backwards'></div>
+              <div class=rsliderpaneltip data-tooltip><img id=rnudgeforward class="icons slidericons" src=./images/right.png alt='nudge forward'></div>
+              <div class=rholabeltip data-tooltip>
+                <div id=rholabel><em>&rho;</em></div>
+                <input id=rval type=text>
+              </div>
+            </div>
+            <div id=calculatedrdiv data-tooltip><em>r</em> of sample <span id=calculatedr class=red>-</span></div>
+
+          </div> 
+
+          <!-------------Panel 3 Controls Clear, Take Sample, Run Freely-------------------------------------------------------->
+          <div id=runcontrols>
+            <div id=runcontrolsdiv data-tooltip><span class=red>3 </span></div>
+            <div id=runstop> 
+              <div id=clear class=runbuttons data-tooltip>Clear </div>
+              <div id=takesample  class=runbuttons data-tooltip>Take Sample</div>
+              <div id=runfreely   class=runbuttons data-tooltip>Run Stop</div>
+              <input type="range" min="0" max="1000" value="900" class="sliderspeed" id=speed data-tooltip>
+            </div>
+          </div>
+
+
+          <!------------Panel 4 Display features------------->
+          <div id=displayfeaturespanel>
+            <div id=displaytip data-tooltip><span class=red>4</span> Display</div>
+            <div>
+              <div class=popntip data-tooltip><input id=displaypopn type=checkbox checked> Population</div>
+              <div class=rtip data-tooltip><input id=displayr   type=checkbox> Value of <em>r</em> in the figure</div>
+              <div class=ctmtip data-tooltip><input id=displayctm type=checkbox> Cross through means</div>
+            </div>
+          </div>
+
+
+          <!------------Panel 5 Descriptive statistics------------->
+          <div id=displaystatistics1spanel>
+            <div id=descstatlabels>
+              <div id=descstatstip data-tooltip><span class=red>5</span> Descriptive statistics <input id=statistics1show type=checkbox></div>
+              <div id=labelx><em>X</em></div>
+              <div id=labely><em>Y</em></div>
+            </div>
+            <div id=statistics1>
+              <div class=statslabel>Mean</div>
+              <div id=m1 class='red pushright'>0</div>
+              <div id=m2 class='red pushright'>0</div>
+              
+              <div class=statslabel>SD</div>
+              <div id=s1 class='red pushright'>0</div>
+              <div id=s2 class='red pushright'>0</div>
+            </div>
+
+          </div>
+
+          <!------------Panel 6 Display Lines------------->
+          <div id=displaylines1panel>
+            <div id=displaylinestip data-tooltip><span class=red>6</span> Display lines <input id=displaylines1show type=checkbox></div>
+            
+            <div id=displaylines1>
+              <div><input id=corryx  class=yxtip data-tooltip type=checkbox> <span  data-tooltip class='blue yxtip'><em>Y</em> against <em>X</em></span> <span id=corryxvallabel class=slopeyxtip data-tooltip >Slope</span> <span id=corryxval class='slopeyxtip red' data-tooltip>0.0</span></div>
+              <div><input id=corrxy  class=xytip data-tooltip type=checkbox> <span  data-tooltip class='red xytip'><em>X</em> against <em>Y</em></span> <span id=corrxyvallabel class=slopexytip data-tooltip>Slope</span>        <span id=corrxyval class='slopexytip red' data-tooltip>0.0</span></div>
+              <div><input id=corrlineslope class=cltip data-tooltip type=checkbox> <span data-tooltip class='black cltip'>Correlation line</span>       <span id=corrlineslopevallabel class=slopecltip data-tooltip>Slope</span> <span id=corrlineslopeval class='slopecltip red' data-tooltip>0.0</span></div>
+            </div>
+          </div> 
+
+          <!----------------Panel 7 dance of r-values ---------------------------------------------------------->
+          <div id=rvaluesection>
+              <div class=dancertip data-tooltip><span class=red>7</span> Dance of the <span class=italic>r</span> values <input type=checkbox id=danceonoff></div>
+          </div>
+
+          <!----------------Panel 8 Latest sample ---------------------------------------------------------->
+
+          <div id=latestsamplesection>
+            <div class=latestsampletip data-tooltip><span class=red>8</span> Latest sample </div>
+            <div class=latestsampledivtip data-tooltip><span class=italic>r </span><span id=latestsample class=red>-</span></div>
+          </div>
+
+          <!----------------Panel 9 Latest sample Confidence Interval---------------------------------------------------------->
+
+          <div id=CIsection>
+            <div class=citip data-tooltip><span class=red>9 </span>Display CIs <input type=checkbox id=displayCIs> </div>
+            <div id=cipcntdiv class=cipcnttip data-tooltip>
+              <div class=copcnttip data-tooltip><span>CI%  <em>C</em></span></div>
+              <div>
+                <select id=CI class=copcnttip data-tooltip>
+                  <option value=0.5>50%</option>
+                  <option value=0.32>68%</option>
+                  <option value=0.2>80%</option>
+                  <option value=0.1>90%</option>
+                  <option value=0.05 selected>95%</option>
+                  <option value=0.02>98%</option>
+                  <option value=0.01>99%</option>
+                  <option value=0.002>99.8%</option>
+                  <option value=0.001>99.9%</option>
+                </select>
+              </div>
+              <div id=CIforr data-tooltip> 
+                <span> CI on latest <span class=italic>r</span> [<span id=cifrom class=red>.0</span>, <span id=cito class=red>.0</span>]</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!----------------Panel 10 Capture of rho by CIs---------------------------------------------------------->
+
+          <div id=capturesection>
+            <div id=capturetip data-tooltip></div>
+            <div id=rhocontrol>
+              <div class=displaylinetomarkrhotip data-tooltip><span class=red>10 </span><input id=displaylinetomarkrho   type=checkbox><span class="italic greek"> &rho;</span> line</div>
+              <div class=showcapturetip data-tooltip><input id=showcapture   type=checkbox> Capture of <span class="italic greek">&rho;</span></div>
+            </div>
+            <div class=showrheaptip data-tooltip><input id=showrheap  type=checkbox> <span class="italic">r</span> heap</div>
+
+            <div class=nosamplestakentip data-tooltip>Number of samples taken <span id=numbersamplestaken class=red>0</span></div>
+
+            <div class=percentCIcapturetip data-tooltip>Percent capturing <span class="italic greek">&rho;</span> <span id=percentCIcapture class=red>0.0</span> %</div>
+
+          </div>
+
+        </div> 
+
+        <!---------------------------------Footer---------------------------------------------->
+        <div id=footer>
+          <div id=footerlink data-tooltip>Click to return to the New Statistics site</div>
+        </div>
+
+      </div>
+
+<!-------------------------------------Right panel---------------------------------------------->
+ 
+      <div id=rightpanel>    
+        <div id=scrolldisplays> 
+          <div id=displayS></div>  <!--scatters-->
+          <div id=displayD></div>  <!--dance-->
+        </div>
+      </div>
+
+
+  <!------------------------------------------------------------------------------------->
+    </div>
+
+
+  </body>
+</html>

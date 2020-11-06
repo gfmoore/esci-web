@@ -1,0 +1,467 @@
+/*
+Program       esci-distributions.css
+Author        Gordon Moore
+Date          21 July 2020
+Description   CSS for esci distributions
+Licence       GNU General Public LIcence Version 3, 29 June 2007
+*/
+
+/* #region Version history
+
+0.0.1   Initial version
+0.1.0   2020-07-25 The first version releaed
+0.1.15  2020-08-02 #11, #12 Fixing sliders - added some css overrides to slider to blank out left end label
+0.1.17  2020-08-03 #18 Palegreen background for panel 4
+0.1.19  2020-08-03 #18 Lighter green?
+0.1.23  2020-08-05 #16 Styling for ne jquery-ui slider pips library for replacement for zslider
+0.1.24  2020-08-07 #13 Added tooltips
+0.1.25  2020-08-07 #16 Moved zslider down a bit
+0.1.26  2020-08-07  #16 Some more tweaking to slider appearance
+0.1.27  2020-08-07  #20 Implement breadcrumbs menu
+0.1.29  2020-08-10  #16 Tweak the slider handles and scale positions
+0.1.30  2020-08-26  #22 lower case d in breadcrumbs
+0.1.31
+
+1.0.0       2020-09-03 Version 1.0.0
+1.0.1       21 Oct 2020 Nudge bars somehow too low, fixed.
+
+#endregion */
+
+/*------------------------------override on ion slider-----------------------------------*/
+/*blank out end labels*/
+.irs--big .irs-min {
+  color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.irs--big .irs-max {
+  color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+/*---------------------------------icons-----------------------------------------------------------*/
+
+.icons {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/*--------------------------------z slider----------------------------------------------------------*/
+
+/*make text above zslider larger*/
+/* #zsliderdiv .irs--big .irs-from, #zsliderdiv .irs--big .irs-to, #zsliderdiv .irs--big .irs-single {
+  font-size: 1.7rem
+} */
+
+#zslider {
+  margin-top: 5.0rem;
+  margin-left: 0.0rem;
+  margin-right: 3.0rem;
+  font-size: 1.4rem;
+}
+
+/*background on fill outside the handles and rounded ends*/
+.ui-slider {
+  border-radius: 20px;
+  background-image: linear-gradient(lightgrey, white) !important;
+}
+
+/*the fill between the handles*/
+#zslider .ui-slider-range,
+#zslider .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+#zslider .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+  background-image: linear-gradient(white, #5C9BD1, #B4D2EA) !important;
+}
+
+#zslider .ui-slider-range {
+  background-color: red !important;
+}
+
+/*style the handles*/
+.ui-slider-handle {
+  border-radius: 25px;
+  height: 28px !important;
+  width: 28px !important;
+  top: -10px !important;
+  margin-left: -11px;
+  background-image: radial-gradient( #A8B0B8,#F3F4F5 ) !important;
+}
+
+.ui-slider-handle:hover {
+  outline: none !important;
+  background-image: radial-gradient( grey,#F3F4F5 ) !important;
+}
+
+
+.ui-slider-handle:active {
+  border: 1px solid #F3F4F5;
+  outline: none !important;
+  background-image: radial-gradient( grey,#F3F4F5 ) !important;
+}
+
+
+
+/*style the label*/
+#zslider .ui-slider-tip {
+  visibility: visible !important;
+  background-color: lightyellow !important;
+  padding: 0.3rem;
+
+  opacity: 1;
+  top: -35px;
+  left: 2px;
+  font-size: 1.7rem;
+  width: 5.0rem;
+}
+
+#zslider .ui-slider-pip {
+  margin-left: -5px;  /*adjust where scale starts from */
+}
+
+/*style the tick marks*/ /*hide all ticks then reveal the ones we want - clever*/
+#zslider .ui-slider-pip .ui-slider-label {
+  color: blue;
+  display: none;
+ }
+
+#zslider .ui-slider-pip:nth-of-type(5n+3) .ui-slider-line {
+  height: 8px;
+}
+
+#zslider .ui-slider-pip:nth-of-type(10n+3) .ui-slider-line {
+  height: 12px;
+}
+
+#zslider .ui-slider-pip:nth-of-type(10n+3) .ui-slider-label {
+  top: 16px;
+  display: block;
+}
+
+
+
+/*----------------------------------control side  (set in esci.css)--------------------------------*/
+
+/*----------------------------------left panel-----------------------------------------------------*/
+
+
+/*----------------tab-----------------*/
+#smarttab {
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+/*---------------tab headers------------*/
+
+.nav-link {
+  font-size: 1.6rem !important;
+}
+
+/*----------------Normal tab------------*/
+
+
+
+#tab-1 {
+  font-size: 1.8rem !important;
+}
+
+label {
+ font-size: 1.6rem !important;
+}
+/*----------------Panel 1 Tails----------*/
+
+#tailspanel {
+  background-color: #FFCC99;
+  border: 1px solid black;
+}
+
+#tails {
+  margin: 1rem;
+}
+
+#showarea {
+  margin-left: 5rem;
+}
+
+.red {
+  color: red;
+}
+
+
+.greek2 {
+  font-size: 2.2rem;
+}
+
+/*----------------------Panel 2 Lines-------------------*/
+
+
+#muzline {
+  margin: 1rem;
+}
+
+#lines {
+  background-color: #CCFFFF;
+  border: 1px solid black;
+}
+
+#showzline {
+  margin-left: 5rem;
+}
+
+/*----------------------Panel 3 Mu Sigma-----------------*/
+
+#Xselectdiv {
+  display: grid;
+  grid-template-columns: 18rem auto;
+}
+
+#showxaxisdiv {
+  margin: 1rem;
+}
+
+#unitsdiv {
+  padding-top: 1.0rem;
+}
+
+#unitsspan {
+  font-size: 1.6rem;
+}
+
+#units {
+  width: 12rem;
+}
+
+input[type=text] {
+  height: 2.5rem;
+}
+
+
+#musigma {
+  background-color: #FFFF99;
+  border: 1px solid black;
+  height: 30rem;
+}
+
+#musliderpanel {
+  display: grid;
+  grid-template-columns: 2.5rem 25rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 2rem;
+}
+
+#sigmasliderpanel {
+  display: grid;
+  grid-template-columns: 2.5rem 25rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 2rem;
+}
+
+.iconsmusigma {
+  padding-top: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.iconsmusigma:hover {
+  background-color: lightgrey;
+}
+
+.iconsmusigma:active {
+  background-color: darkgrey;
+}
+
+
+#mudiv {
+padding-top: 2.3rem; 
+margin-left: 0.5rem;
+}
+
+#sigmadiv {
+  padding-top: 2.3rem; 
+  margin-left: 0.5rem;
+}
+
+#muval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+#sigmaval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+
+/*--------------------------------Student t tab----------------------------------------------------------------*/
+
+/*--------------------------------4 radio buttons for z or t----------------------------------------------------*/
+
+#ztselect {
+  border: 1px solid black;
+  background-color:#cdf6c6;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  height: 25rem;
+}
+
+/*--------------------------------df slider--------------------------------------------------------------------*/
+
+#tab-2 {
+  font-size: 1.8rem !important;
+}
+
+#df {
+  padding-top: 2rem;
+}
+
+#dfblock  {
+  display: grid;
+  grid-template-columns: 2.5rem 24rem 2rem 1rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 2rem;
+}
+
+#dfdiv {
+  padding-top: 2.5rem; 
+  font-size: 2.0rem;
+}
+
+#dfval {
+  margin-top: 2.8rem;
+  margin-left: 2rem;
+}
+
+/*----------------------------------------5 t tails-------------------------------------------------*/
+
+#ttailspanel {
+  background-color: #FFCC99;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+#ttails {
+  margin: 1rem;
+}
+
+#tshowarea {
+  margin-left: 5rem;
+}
+
+/*---------------------------------------6. Lines--------------------------------------------------*/
+
+#tlines {
+  background-color: #CCFFFF;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+#tmuzline {
+  margin: 1rem;
+}
+
+#tshowzline {
+  margin-left: 5rem;
+}
+
+/*----------------------------------display---------------------------------------------------------*/
+#rightpanel {
+  border: 1px solid grey;
+  display: grid;
+  grid-template-rows: 8rem auto 5rem 20rem;
+}
+
+/*---------------------------------top axis---------------------------------------------------------*/
+
+#topaxis {
+  background-color: white;
+  font-size: 1.0rem;
+  /* border: 1px solid green; */
+}
+
+.topaxistext {
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.topaxisunits {
+  font-size: 1.8rem;
+  /* font-weight: bold; */
+}
+
+/*---------------------------------bottom axis---------------------------------------------------------*/
+
+#bottomaxis {
+  background-color: white;
+  font-size: 1.0rem;
+  /* border: 1px solid green; */
+}
+
+.bottomaxistext {
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*----------------------------------pdf-------------------------------------------------------------*/
+
+#pdfdisplay {
+  /* border: 1px solid red; */
+  background-color: white;
+}
+
+
+/*----------------------------------slider-----------------------------------------------------------*/
+
+#sliderdisplayarea {
+  display: grid;
+  grid-template-columns: 25px 40px auto 25px 30px ;
+}
+
+
+
+.slidericons {
+  margin-top: 2.5rem;
+}
+
+.slidericons:hover {
+  background-color: lightgray;
+}
+
+.slidericons:active {
+  background-color: darkgrey;
+}
+
+.slidericonsz {
+  margin-top: 4.4rem;
+}
+
+.slidericonsz:hover {
+  background-color: lightgray;
+}
+
+.slidericonsz:active {
+  background-color: darkgrey;
+}
+
+.criticalregionlefttail {
+  
+  stroke-width: 0;
+}
+
+.criticalregionrighttail {
+  
+  stroke-width: 0;
+}
+
+/*---------------------------------svg style----------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+

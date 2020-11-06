@@ -36,10 +36,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.4   18 Oct 2020 Did tweaks to the menu image display to make smoother  
 1.0.5   18 Oct 2020 Make images clickable
 1.0.6   21 Oct 2020 Change menu links for www.thenewstatistics.com
+1.0.7   6 Nov 2020 Consolidation of all programs into one github repository
+
 */
 //#endregion 
 
-let version = '1.0.6';
+let version = '1.0.7';
 
 // 'use strict';
 $(function() {
@@ -150,54 +152,54 @@ $(function() {
 
   //menu bar
   $('#menu1').on('click', function() {
-    window.location.href = 'https://www.esci-dances.thenewstatistics.com/';
+    window.location.href = './esci-dances.html';
   })
 
   //image
   $('#dances').on('click', function() {
-    window.location.href = 'https://www.esci-dances.thenewstatistics.com/';
+    window.location.href = './esci-dances.html';
   })
 
   $('#menu2').on('click', function() {
-    window.location.href = 'https://www.esci-distributions.thenewstatistics.com/';
+    window.location.href = './esci-distributions.html';
   })
 
   $('#distributions').on('click', function() {
-    window.location.href = 'https://www.esci-distributions.thenewstatistics.com/';
+    window.location.href = './esci-distributions.html';
   })
 
   $('#menu3').on('click', function() {
-    window.location.href = 'https://www.esci-d-picture.thenewstatistics.com/';
+    window.location.href = './esci-d-picture.html';
   })
 
   $('#d-picture').on('click', function() {
-    window.location.href = 'https://www.esci-d-picture.thenewstatistics.com/';
+    window.location.href = './esci-d-picture.html';
   })
 
   $('#menu4').on('click', function() {
-    //window.location.href = 'https://www.esci-precision.thenewstatistics.com/';
-    $('#message').show();
+    window.location.href = './esci-precision.html';
+    //$('#message').show();
   })
 
   $('#precision').on('click', function() {
-    //window.location.href = 'https://www.esci-precision.thenewstatistics.com/';
-    $('#message').show();
+    window.location.href = './esci-precision.html';
+    //$('#message').show();
   })
 
   $('#menu5').on('click', function() {
-    window.location.href = 'https://www.esci-correlation.thenewstatistics.com/';
+    window.location.href = './esci-correlation.html';
   })
 
   $('#correlation').on('click', function() {
-    window.location.href = 'https://www.esci-correlation.thenewstatistics.com/';
+    window.location.href = './esci-correlation.html';
   }) 
 
   $('#menu6').on('click', function() {
-    window.location.href = 'https://www.esci-dance-r.thenewstatistics.com/';
+    window.location.href = './esci-dance-r.html';
   })
 
   $('#dance-r').on('click', function() {
-    window.location.href = 'https://www.esci-dance-r.thenewstatistics.com/';
+    window.location.href = './esci-dance-r.html';
   })
 
   /*---------------------------------------------------Tool tips on or off----------------------------------------*/

@@ -1,0 +1,515 @@
+/*
+Program       esci-dances.css
+Author        Gordon Moore
+Date          15 May 2020
+Description   CSS for esci dances
+Licence       GNU General Public LIcence Version 3, 29 June 2007
+*/
+
+/* #region Version history
+0.1.0      Initial version
+0.2.0      Refactored version
+...
+0.2.8      2020-05-20 Add svg code for mu line and small adjustments
+0.2.9      2020-05-20 Added dialog box for version styling
+0.2.10     2020-05-23 Slight adjustment for capture the next mean section
+
+0.3.0
+0.3.1      2020-05-29 Allow full browser size to be used for display  
+0.3.2      nothing
+0.3.3      2020-06-05 Needed to fix the vertical height of the left side panels 
+0.3.4      2020-06-08 Minor changes to layout
+0.3.5
+0.3.6      2020-06-17 Issue #3 para 3 adjusted poition of version dialog box a lttle.
+0.3.10     2020-06-20 Add tooltips styling
+0.3.11     2020-06-21 Custome draw and skew. Added a tooltips on off button
+0.3.14     2020-06-24 Minor change to colour of population bubbles
+0.3.16     2020-06-25 Make axis font and mu line text a little bigger. Slight increase in width of left fram and adjusted space for Mean M in 4. Samples
+0.3.18     2020-06-25 Slight tweaks on moving items from panel 7 to panel 5 and adding new spans
+0.3.19     2020-06-26 Adjusted colour of panel 5 and 8 slightly to match ESCI Classic.
+0.3.28    2020-06-30  Increased width of left hand panel for mobiles.
+0.3.32    2020-07-03  Changed colours of samples and sd/mean lines
+0.3.40    2020-07-08  Add css for capture of next mean line stroke
+0.3.41    2020-07-09  Add css for footer link, for p-values panel
+0.3.46    2020-07-11  Moved population bubble attributes to javascript
+0.3.56    2020-07-13  Preserve whitespace in svg text (pre) and fixed font
+0.3.60    2020-07-13  Increase font size for p value text
+0.3.61    2020-07-14  CI$20 Added font-color for noofnextmeans div
+0.3.64    2020-07-15  CI$3  Used a tooltip library - Tipped - to enhance tooltips.
+0.3.66    2020-07-18  CI#15 P value enhancements. Stripped out common css
+0.3.69    2020-07-20  CI#15 Added sound volume control
+0.3.70    2020-07-
+#endregion */
+/*
+0.9.0 Beta  2020-07-22 Beta version  
+0.9.1       2020-07-23 Some tooltip fixes
+0.9.5       2020-07-24 Dances #3 Fixed error in tooltips, made tip font and space slightly larger
+0.9.10
+0.9.11      2020-08-09 #29 Added breadcrumbs       
+0.9.19
+0.9.20      2020-08-25 #37 Red panel numbers
+
+1.0.0       2020-09-03 Version 1.0.0
+*/
+
+
+span {
+  user-select: none;
+}
+
+
+.greek2 {  /*for p-values labels*/ 
+  font-size: 1.5rem;
+}
+
+.red {
+  color: red;
+}
+
+/*-------------------------------------------------The left hand control side---------------------------------------------------------------*/
+
+/*see esci.css*/
+/* #leftpanel {
+
+/*-----------------------------------------------1. Population section--------------------------------------------------------*/
+
+#distribution {
+  border: 1px solid black;
+  background-color: lemonchiffon;
+  padding: 0.3rem;
+}
+
+#musliderdiv {
+  display: grid;
+  grid-template-columns: 1rem 2fr 1fr;
+}
+
+#muvalue {
+  user-select: none;
+}
+
+#muvaluetext {
+  background-color: lemonchiffon;
+}
+
+#sigmasliderdiv {
+  display: grid;
+  grid-template-columns: 1rem 2fr 1fr;
+}
+
+#sigmavalue {
+  user-select: none;
+}
+
+#sigmavaluetext {
+  background-color: lemonchiffon;
+}
+
+#shape {
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 7rem 10rem 12rem 10rem auto;
+}
+
+/*--------------------------------2. Click to display Population, SD Lines, Fill random--------------------------------------*/
+
+#displayoptions {
+  background-color: lemonchiffon;
+  border: 1px solid black;
+  padding: 0.3rem;
+}
+
+/*--------------------------------3. Run and controls section------------------------------------------------------------------*/
+
+#runcontrols {
+  border: 1px solid black;
+  background-color: white; /* aliceblue; */
+  padding: 0.3rem;
+  padding-bottom: 1.0rem;
+}
+
+#runstop {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 3fr;
+  grid-column-gap: 1rem;
+  padding-top: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+.runbuttons {
+  height: 3.5rem;
+  padding: 0.1rem;
+  background-color: rgb(148, 243, 148);
+  border: 1px solid grey;
+  border-radius: 0.7rem;
+  vertical-align: middle;
+}
+
+.runbuttons:hover {
+  background-color: yellow;
+}
+
+.runbuttons:active {
+  background-color: orange;
+  user-select: none;
+}
+
+#clearsample {
+  background-color: lemonchiffon;
+  display: flex;  /*to centre text vertically and horizontally*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#clearsample:hover {
+  background-color: yellow;
+}
+
+#clearsample:active {
+  background-color: orange;
+  user-select: none;
+}
+
+#takesample {
+  display: flex;  /*to centre text vertically and horizontally*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#runfreely {
+  display: flex;  /*to centre text vertically and horizontally*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#speed {  /*reverse the slider so that min speed on left i.e. slower*/
+  direction: rtl
+}
+
+/*---------------------------------------------------4. Samples section------------------------------------------------------*/
+#samplessection {
+  border: 1px solid black;
+  background-color: skyblue; 
+  padding: 0.3rem;
+}
+
+#samples {
+  display: grid;
+  grid-template-columns: 10rem 3rem 7rem;
+}
+
+#latestsamples {
+  display: grid;
+  grid-template-columns: 18rem 12rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+}
+
+#samplesselected {
+  width: 5.0rem;
+}
+
+#nosamplesx {
+  color: firebrick;
+}
+
+#samplemean {
+  color: firebrick;
+}
+
+#samplesd {
+  color: firebrick;
+}
+
+#latestmoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#popnmoe {
+  color: firebrick;
+}
+
+#samplemoe {
+  color: firebrick;
+}
+
+#datapointssection {
+  margin-top: 0.4rem;
+}
+
+/*--------------------------------------------------5. Mean heap section------------------------------------------------------*/
+#heapsection {
+  border: 1px solid black;
+  background-color: #ccffcc;
+  padding: 0.3rem;
+}
+
+#heapstats {
+  display: grid;
+  grid-template-columns: 20rem auto;
+}
+
+#xbarhp {
+  color: firebrick;  
+}
+
+#sehp {
+  color: firebrick;
+}
+
+#curveheapse {
+  color: firebrick;
+}
+
+#numberinheap {
+  color: firebrick;
+}
+
+
+/*----------------------------------------------6. CI Section------------------------------------------------------------------*/
+
+#CIsection {
+  border: 1px solid black;
+  background-color: lemonchiffon;
+  padding: 0.3rem;
+}
+
+#CIcontrol {
+  display: grid;
+  grid-template-columns: 6rem 9rem 7rem auto;
+}
+
+#CIIntervalText {
+  background-color: lemonchiffon;
+}
+
+/*-----------------------------------------------7. Capture of mean section----------------------------------------------------*/
+
+#captureofmean {
+  border: 1px solid black;
+  background-color: lavender;
+  padding: 0.3rem;
+}
+
+#captured {
+  color: firebrick;
+}
+
+#capturedpercent {
+  color: firebrick;
+}
+
+#capturestats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#nosamplesy {
+  color: firebrick;
+}
+
+/*----------------------------------------------------8. Capture of next mean section--------------------------------------------*/
+#capturesection {
+  border: 1px solid black;
+  background-color: #ffcc99;
+  padding: 0.3rem;
+}
+
+#capturenextmeangrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+}
+
+#noofnextmeans {
+  color: firebrick;
+}
+
+#nocapturingnextmean {
+  color: firebrick;
+}
+
+#pccapturingnextmean {
+  color: firebrick;
+}
+
+/*---------------------------------------------------9. dance of the p-values-----------------------------------------------*/
+
+#pvaluesection {
+  border: 1px solid black;
+  background-color: #ff9999f6;
+  padding: 0.3rem;
+}
+
+#pvaluesoundblock {
+  display: grid;
+  grid-template-columns: 7rem 3rem auto;
+}
+
+#vollabel {
+  padding-top: 2px;  /*weird why I need this*/
+}
+
+#volslider {
+  width: 8rem;
+}
+
+#pvaluesectiondiv {
+  display: grid;
+  grid-template-columns: 20rem auto;
+}
+
+#hypothesismu0 {
+  color: darkblue;
+}
+
+#cohensd {
+  color: darkblue;
+}
+
+
+
+
+/*---------------------------------------------------Filler-------------------------------------------------------------------*/
+
+#filler {
+  border: 1px solid black;
+}
+
+
+
+/*--------------------------------------------------display section------------------------------------------------------------*/
+#displaysection {
+  background-color: white;
+  display: grid;
+  grid-template-rows: 25% auto;
+  border: 1px solid blue;
+  height: 100%;
+}
+
+#displaypdf {
+  width: 100%;
+}
+
+#displaysample {
+  height: 100%;
+}
+
+
+/*--------------------------------------------------------svg codes ---------------------------------------------------------*/
+/* Note that some are embedded in drawing codes as putting say a stroke colour here overrides anything in code*/
+
+/* this preserves whitespace in svg text*/
+text { 
+  white-space: pre; 
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.axisline {
+  stroke: blue;
+  stroke-width: 1px;
+}
+
+/* .axis { 
+  font: 14px sans-serif; 
+} */
+
+.pdf {
+  fill: none;
+  stroke: blue;
+  stroke-width: 2px;
+}
+
+.meanlines {
+  stroke: darkgrey;
+  stroke-width: 2px;
+}
+
+.sdlines {
+  stroke: darkgrey;
+  stroke-width: 1px;
+}
+
+.muline {
+  stroke: blue;
+  stroke-width: 2px;
+}
+
+.mutext {
+  font-size: 2.0rem;
+  fill: black;
+  stroke: black;
+  stroke-width: 1;
+}
+
+.mu0line {
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.mu0text {
+  font-size: 2.0rem;
+  fill: black;
+  stroke: black;
+  stroke-width: 1;
+}
+
+.samplepoint {
+  stroke: blue;
+  stroke-width: 1px;
+  fill: lightyellow;
+}
+
+.smean {
+  stroke: black;
+  stroke-width: 1px;
+  /* fill: lawngreen;*/      /*need to set at program level */
+}
+
+.smeanmoe {
+  stroke: black;
+  stroke-width: 1px;
+  /* fill: lawngreen;*/      /*need to set at program level */
+}
+
+
+.pmoe {
+  /* stroke: lawngreen; */   /* the problem is that css has higher precedence than coded */
+  stroke-width: 3px;
+}
+
+.smoe {
+  /* stroke: springgreen;  /* change this after testing */
+  stroke-width: 3px;  
+}
+
+
+
+/*for capture of next mean*/
+.pcaptureline {
+  stroke-width: 4px;
+  stroke: magenta;
+}
+
+.scaptureline {
+  stroke-width: 4px;
+  stroke: magenta;
+}
+
+.pvalue {
+  stroke-width: 0.5px;
+  stroke:black;
+}
+
+.pvtext {
+  font-size: 1.2rem;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+
+

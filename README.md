@@ -1,6 +1,6 @@
 # esci-web menu
 
-## Current version 1.0.6
+## Current version 1.0.7
 
 You can see which version by hovering on the logo.
 

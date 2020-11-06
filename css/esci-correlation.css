@@ -1,0 +1,464 @@
+/*
+Program       esci-correlation.css
+Author        Gordon Moore
+Date          20 August 2020
+Description   CSS for esci correlation
+Licence       GNU General Public LIcence Version 3, 29 June 2007
+*/
+
+/* #region Version history
+
+0.0.1   Initial version
+0.0.2  2020-08-26 #2 Appearance jigs
+0.0.3  2020-08-26 #1 Basic correlation. Not all flags implemented yet.
+0.0.8
+0.0.9  2020-09-02 #5 Changed colours for labels in Display Lines  #8 added test data and import.
+0.0.10 2020-09-03 #9 Tooltips
+0.0.11
+0.9.0  2020-09-05 #6 Remove TEST option, set version 0.9.0
+
+1.0.0  2020-09-06 Version 1.0.0
+#endregion */
+
+
+/*---------------------------------icons-----------------------------------------------------------*/
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
+.small {
+  font-size: 1.3rem;
+}
+
+.small1 {
+  font-size: 1.4rem;
+}
+
+.backcolour {
+  border: 1px solid darkgrey;
+  background-color: lemonchiffon;
+  padding-left:0.2rem;
+  padding-right: 0.2rem;
+}
+
+.greek2 {
+  font-size: 2.2rem;
+}
+
+.icons {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 2.6rem;
+}
+
+.slidericons {
+  margin-top: 2.8rem;
+}
+
+.slidericons:hover {
+  background-color: lightgray;
+}
+
+.slidericons:active {
+  background-color: darkgrey;
+}
+
+/*----------------------------------Override left panel--------------------------------------------*/
+
+#header {
+  border: 0px solid black;
+}
+
+#breadcrumbs {
+  border: 1px solid black;
+  font-size: 1.6rem;
+}
+
+#tab1text {
+  border: 1px solid black;
+  font-size: 1.5rem;
+  padding-left: 0.5rem;;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+/*----------------------------------Panels-----------------------------------------------------*/
+
+#panels {
+  font-size:1.5rem;
+}
+
+/*--------------Tab 1 Panel 1 N1-----------------------*/
+#N1panel {
+  border: 1px solid black;
+  background-color: #FFFF99;
+  padding: 0.5rem;
+}
+
+#N1sliderpanel {
+  display: grid;
+  grid-template-columns: 25rem 2rem 3rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#N1val {
+  margin-top: 3.0rem;
+  height: 2rem;
+  width: 4rem;
+}
+
+/*--------------Tab 1 Panel 2 r-----------------------*/
+#rpanel {
+  border: 1px solid black;
+  background-color: #CCFFCC;
+  padding: 0.5rem;
+}
+
+#rsliderpanel {
+  display: grid;
+  grid-template-columns: 25rem 2rem 3rem 5rem;
+  grid-row-gap: 3rem;
+  margin-top: 1rem;
+}
+
+#rval {
+  margin-top: 3.0rem;
+  height: 2rem;
+  width: 4rem;
+}
+
+#calculatedrdiv {
+  margin: 0.5rem;
+  padding-left: 20.5rem;
+}
+
+
+/*--------------Tab 1 Panel 3 New data set-----------------------*/
+#newdatasetpanel {
+  border: 1px solid black;
+  background-color: ivory;
+  padding: 0.5rem;
+  height: 8rem;
+}
+
+#newdataset {
+  padding-top: 0.8rem;
+  padding-left: 0.8rem;
+  width: 12rem;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: palegreen;
+  margin-top: -1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+  user-select: none;
+}
+
+#newdataset:hover {
+  background-color: springgreen;
+}
+
+#newdataset:active {
+  background-color: green;
+}
+
+#testdiv {
+  color: firebrick;
+  margin-top: 1rem;
+}
+
+
+/*--------------Tab 1 Panel 4 Display features-----------------------*/
+#displayfeaturespanel {
+  border: 1px solid black;
+  background-color: #CCFFFF;
+  padding: 0.5rem;
+}
+
+#displayr {
+  margin-top: 1.0rem;
+}
+
+#displayctm {
+  margin-top: 1.0rem;
+}
+
+#displaymd {
+  margin-top: 1.0rem;
+  margin-bottom: 1.0rem;
+}
+
+/*--------------Tab 1 Panel 5 Descriptive statistics 1-----------------------*/
+#displaystatistics1spanel {
+  border: 1px solid black;
+  background-color: #D2C4EE;
+  padding: 0.5rem;
+}
+
+#statistics1 {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 10rem 3rem 6rem;
+  margin-bottom: 1rem;
+}
+
+.statslabel {
+  text-align: right;
+  padding-right: 3.0rem;
+}
+
+#labelx {
+  margin-left: 1.5rem; 
+}
+
+#labely {
+  margin-left: 3.8rem;
+}
+
+.pushright {
+  text-align: right;
+}
+
+/*--------------Tab 1 Panel 6 Display lines-----------------------*/
+#displaylines1panel {
+  border: 1px solid black;
+  background-color: papayawhip;
+  padding: 0.5rem;
+
+}
+
+#displaylines1{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#corryxvallabel {
+  padding-left: 4.0rem;
+}
+
+#corrxyvallabel {
+  padding-left: 4.0rem;
+}
+
+#corrlineslopevallabel {
+  padding-left: 1.0rem;
+}
+
+/*--------------Tab 1 Panel 7 Information-----------------------*/
+#displayinfopaneldiv {
+  background-color: lightgrey;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  border: 1px solid black;
+}
+
+#displayinfopaneltitle {
+  padding: 0.5rem;  
+}
+
+#displayinfopanel {
+
+  display: grid;
+  grid-template-columns: 10rem 10rem;
+}
+
+#lambda1 {
+  margin-top: 2rem;
+}
+
+#lambda2 {
+  margin-top: 2rem;
+}
+
+#space {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#spacer {
+  margin-left: 2rem;
+  margin-right: rem;
+}
+
+
+
+/*----------------------------------Load test data panel-------------------------------------------------------------*/
+
+.clearbutton {
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-top: 0.3rem;
+  height: 3.5rem;
+  user-select: none;
+  margin-right: 5px;
+}
+
+.loadbutton {
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-top: 0.3rem;
+  height: 3.5rem;
+  user-select: none;
+  margin-right: 10px;
+}
+
+#loadtestdatapanel {
+  border: 1px solid black;
+  background-color: #FFCC00;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+#data {
+  display: grid;
+  grid-template-columns: 12rem 12rem;
+}
+
+#datasetname {
+  width: 6rem;
+}
+
+.grouptext {
+  width: 10rem;
+}
+
+/*----------------Clear Data----------*/
+
+.cleardatapanelwrapper {
+  /* border: 1px solid black; */
+  background-color: #FFCC00;
+  font-size: 1.6rem;
+}
+
+.cleardatapanel {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 13rem 5rem 7rem 12rem;
+}
+
+#cleardata {
+  background-color: lightblue; 
+  width: 10rem;
+  padding-left: 0.5rem;
+  padding-top: 0.3rem;
+  height: 2.3rem;
+}
+
+#cleardata:hover {
+  background-color: lavender;
+}
+
+#cleardata:active {
+  background-color: dodgerblue;
+}
+
+#cleardatayes {
+  background-color: lightgreen;
+  padding-top: 0.3rem;
+  height: 2.3rem;
+}
+
+#cleardatayes:hover {
+  background-color: honeydew;
+}
+
+#cleardatayes:active {
+  background-color: green;
+}
+
+#cleardatano {
+  text-align: center;
+  background-color: red;
+  margin-right: 2rem;
+  padding-top: 0.3rem;
+  height: 2.3rem;
+}
+
+#cleardatano:hover {
+  background-color: pink;
+}
+
+#cleardatano:active {
+  background-color: firebrick;
+}
+
+#loaddata {
+  background-color: palegreen; 
+  width: 9rem;
+  padding-top: 0.3rem;
+  height: 2.3rem;
+}
+
+#loaddata:hover {
+  background-color: lavender;
+}
+
+#loaddata:active {
+  background-color: green;
+}
+
+
+.inputfile {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  color: blue;
+}
+
+
+.grouplabels {
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.grouptext {
+  text-align: center;
+  margin-left: 4rem;  
+  background-color: lightskyblue;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.dataitems1 {
+  text-align: center;
+  margin-left: 4rem;
+}
+
+.dataitems2 {
+  text-align: center;
+  margin-left: 4rem;
+}
+
+
+/*----------------------------------Right panel-----------------------------------------*/
+#rightpanel {
+  border: 1px solid grey;
+  display: grid;
+  grid-template-rows: auto;
+  padding-top: 1rem;
+}
+
+/*----------------------------------footer override---------------------------------*/
+
+#footer {
+  font-size: 1.4rem !important;
+}
+
+/*----------------------------------display-------------------------------------------------------------*/
+
+#display {
+  background-color: white;
+  margin-left: 2rem;
+  position: sticky; /*keeps div at top when vertical scrolling*/
+  top: 0;
+}
