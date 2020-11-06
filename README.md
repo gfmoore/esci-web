@@ -1,4 +1,4 @@
-# esci-web menu
+# esci-web menu and programs
 
 ## Current version 1.1.0
 
