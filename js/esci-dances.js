@@ -144,8 +144,10 @@ Start using version history now to record changes and fixes
 0.9.20      2020-08-25 #37 Red panel numbers
 
 1.0.0       2020-09-03 Version 1.0.0
+
+1.1.0  6 Nov 2020 Rationalised into one repository
 */
-let version = '1.0.0';
+let version = '1.1.0';
  
 'use strict';
 

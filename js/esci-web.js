@@ -38,10 +38,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.6   21 Oct 2020 Change menu links for www.thenewstatistics.com
 1.0.7   6 Nov 2020 Consolidation of all programs into one github repository
 
+1.1.0  6 Nov 2020 Rationalised into one repository
+
 */
 //#endregion 
 
-let version = '1.0.7';
+let version = '1.1.0';
 
 // 'use strict';
 $(function() {

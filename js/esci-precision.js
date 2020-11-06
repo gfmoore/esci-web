@@ -41,10 +41,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.21  5  Nov 2020 #12 Grid lines initially on and tooltip change
 0.1.22  6  Nov 2020 #12 Change text in panel3/4
 
+1.1.0  6 Nov 2020 Rationalised into one repository
+
 */
 //#endregion 
 
-let version = '0.1.21';
+let version = '1.1.0';
 let test = true;
 
 'use strict';

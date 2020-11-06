@@ -38,10 +38,12 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 0.1.9   18 Oct 2020 #15 Corrections to tips
 
 1.0.0   19 Oct 2020 Version 1.0.0
+
+1.1.0  6 Nov 2020 Rationalised into one repository
 */
 //#endregion 
 
-let version = '1.0.0';
+let version = '1.1.0';
 
 let testing = false;
 
