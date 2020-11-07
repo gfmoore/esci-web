@@ -162,13 +162,13 @@ $(function() {
   })
 
   $('#menu4').on('click', function() {
-    window.location.href = './esci-precision.html';
-    //$('#message').show();
+    //window.location.href = './esci-precision.html';
+    $('#message').show();
   })
 
   $('#precision').on('click', function() {
-    window.location.href = './esci-precision.html';
-    //$('#message').show();
+    //window.location.href = './esci-precision.html';
+    $('#message').show();
   })
 
   $('#menu5').on('click', function() {
@@ -236,7 +236,14 @@ $(function() {
 
   /*---------------------------------------------------------  resize event -----------------------------------------------*/
   
-  $('#message').on('click', function() {
+  $('#messageclose').on('click', function() {
+    $('#message').hide();
+  })
+
+  $('#pin').on('change', function() {
+    if ($('#pin').val() === '6767') {
+      window.location.href = './esci-precision.html';
+    }
     $('#message').hide();
   })
 
