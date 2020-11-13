@@ -44,11 +44,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
 1.1.2  13 Nov 2020 #7 erratic N fixed - rho set to 0.01
+1.1.3  13 Nov 2020 Remove italic from rho symbol in html
 
 */
 //#endregion 
 
-let version = '1.1.2';
+let version = '1.1.3';
 let test = true;
 
 'use strict';
