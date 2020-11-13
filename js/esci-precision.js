@@ -43,11 +43,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+1.1.2  13 Nov 2020 #7 erratic N fixed - rho set to 0.01
 
 */
 //#endregion 
 
-let version = '1.1.1';
+let version = '1.1.2';
 let test = true;
 
 'use strict';
@@ -430,7 +431,7 @@ $(function() {
       min: 0,
       max: 1.0,
       from: 0.7,
-      step: 0.005,
+      step: 0.01,
       prettify: prettify2,
       //on slider handles change
       onChange: function (data) {
