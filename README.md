@@ -1,6 +1,13 @@
-# esci-web menu and programs
+# esci-web menu and components
 
-## Current version 1.1.2
+## Current esci-web (menu)             version 1.1.1
+## Current esci-dance                  version 1.1.1
+## Current esci-distributions          version 1.1.1 
+## Current esci-d-picture              version 1.1.1
+## Current esci-precision for planning version 1.1.2
+## Current esci-correlation            version 1.1.2
+## Current esci-dance-r                version 1.1.1
+
 
 You can see which version by hovering on the logo.
 

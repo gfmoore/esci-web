@@ -27,11 +27,12 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 1.1.0  6 Nov 2020 Rationalised into one repository
 
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+1.1.2  13 Nov 2020 #8 Set initial N to 50
 
 */
 //#endregion 
 
-let version = '1.1.1';
+let version = '1.1.2';
 
 'use strict';
 $(function() {
@@ -57,7 +58,7 @@ $(function() {
 
   //tab 1 panel 1 N1
   let $N1slider;
-  let N1 = 4;
+  let N1 = 50;
   const $N1val = $('#N1val');
   $N1val.val(N1.toFixed(0));
   const $N1nudgebackward = $('#N1nudgebackward');
@@ -267,7 +268,7 @@ $(function() {
       type: 'single',
       min: 0,
       max: 300,
-      from: 4,
+      from: 50,
       step: 1,
       prettify: prettify0,
       //on slider handles change
@@ -343,7 +344,7 @@ $(function() {
   //set everything to a default state.
   function clear() {
     //set sliders to initial
-    N1 = 4;
+    N1 = 50;
     updateN1();
     $N1val.text(N1.toFixed(0));
 
@@ -898,7 +899,7 @@ $(function() {
   //changes to N1
   $N1val.on('change', function() {
     if ( isNaN($N1val.val()) ) {
-      N1 = 4;
+      N1 = 50;
       $N1val.val(N1.toFixed(0));
       return;
     };
