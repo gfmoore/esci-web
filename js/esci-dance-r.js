@@ -42,11 +42,12 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
 1.1.2  13 Nov 2020 #9 Stop getting a negative zero for rho
+1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
 
 */
 //#endregion 
 
-let version = '1.1.2';
+let version = '1.1.3';
 
 let testing = false;
 
@@ -1600,7 +1601,7 @@ $(function() {
   function drawrholine() {
     removerholine();
     svgD.append('line').attr('class', 'rholine').attr('x1', rx(rs)).attr('y1', 45).attr('x2', rx(rs) ).attr('y2', heightD-40).attr('stroke', 'blue').attr('stroke-width', 2);
-    svgD.append('text').text('\u03C1').attr('class', 'rholine').attr('x', rx(rs)).attr('y', heightD - 10).attr('text-anchor', 'start').attr('fill', 'blue').style('font-size', '1.5rem').style('font-weight', 'bold').style('font-style', 'italic');
+    svgD.append('text').text('\u03C1').attr('class', 'rholine').attr('x', rx(rs)).attr('y', heightD - 10).attr('text-anchor', 'start').attr('fill', 'blue').style('font-size', '1.5rem').style('font-weight', 'bold');
   }
 
   function removerholine() {

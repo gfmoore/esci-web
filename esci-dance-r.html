@@ -26,6 +26,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.0.0   19 Oct 2020 Version 1
 
 1.1.0  6 Nov 2020 Rationalised into one repository
+1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
 
 -->
 <!--endregion -->
@@ -114,7 +115,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
           <!------------Panel 2 Generate dataset with chosen r------------->
           <div id=rpanel>
-            <div id=rpaneltip data-tooltip><span class=red >2 </span> Set population correlation  <em>&rho;</em>, see sample correlation <em>r</em></div>
+            <div id=rpaneltip data-tooltip><span class=red >2 </span> Set population correlation  &rho;, see sample correlation <em>r</em></div>
             <div id=rsliderpanel data-tooltip>
               <div id=rsliderdiv class=rsliderpaneltip data-tooltip><input id=rslider type=text class=rsliderpaneltip data-tooltip></div>
               <div class=rsliderpaneltip data-tooltip><img id=rnudgebackward class="icons slidericons" src=./images/left.png alt='nudge backwards'></div>
@@ -183,14 +184,14 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
           <!----------------Panel 7 dance of r-values ---------------------------------------------------------->
           <div id=rvaluesection>
-              <div class=dancertip data-tooltip><span class=red>7</span> Dance of the <span class=italic>r</span> values <input type=checkbox id=danceonoff></div>
+              <div class=dancertip data-tooltip><span class=red>7</span> Dance of the <span class=italic3>r</span> values <input type=checkbox id=danceonoff></div>
           </div>
 
           <!----------------Panel 8 Latest sample ---------------------------------------------------------->
 
           <div id=latestsamplesection>
             <div class=latestsampletip data-tooltip><span class=red>8</span> Latest sample </div>
-            <div class=latestsampledivtip data-tooltip><span class=italic>r </span><span id=latestsample class=red>-</span></div>
+            <div class=latestsampledivtip data-tooltip><span class=italic3>r </span><span id=latestsample class=red>-</span></div>
           </div>
 
           <!----------------Panel 9 Latest sample Confidence Interval---------------------------------------------------------->
@@ -213,7 +214,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
                 </select>
               </div>
               <div id=CIforr data-tooltip> 
-                <span> CI on latest <span class=italic>r</span> [<span id=cifrom class=red>.0</span>, <span id=cito class=red>.0</span>]</span>
+                <span> CI on latest <span class=italic3>r</span> [<span id=cifrom class=red>.0</span>, <span id=cito class=red>.0</span>]</span>
               </div>
             </div>
 
@@ -224,14 +225,14 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
           <div id=capturesection>
             <div id=capturetip data-tooltip></div>
             <div id=rhocontrol>
-              <div class=displaylinetomarkrhotip data-tooltip><span class=red>10 </span><input id=displaylinetomarkrho   type=checkbox><span class="italic greek"> &rho;</span> line</div>
-              <div class=showcapturetip data-tooltip><input id=showcapture   type=checkbox> Capture of <span class="italic greek">&rho;</span></div>
+              <div class=displaylinetomarkrhotip data-tooltip><span class=red>10 </span><input id=displaylinetomarkrho   type=checkbox><span class="greek3"> &rho;</span> line</div>
+              <div class=showcapturetip data-tooltip><input id=showcapture   type=checkbox> Capture of <span class="greek3">&rho;</span></div>
             </div>
-            <div class=showrheaptip data-tooltip><input id=showrheap  type=checkbox> <span class="italic">r</span> heap</div>
+            <div class=showrheaptip data-tooltip><input id=showrheap  type=checkbox> <span class="italic3">r</span> heap</div>
 
             <div class=nosamplestakentip data-tooltip>Number of samples taken <span id=numbersamplestaken class=red>0</span></div>
 
-            <div class=percentCIcapturetip data-tooltip>Percent capturing <span class="italic greek">&rho;</span> <span id=percentCIcapture class=red>0.0</span> %</div>
+            <div class=percentCIcapturetip data-tooltip>Percent capturing <span class="greek3">&rho;</span> <span id=percentCIcapture class=red>0.0</span> %</div>
 
           </div>
 

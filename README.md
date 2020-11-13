@@ -6,7 +6,7 @@
 ## Current esci-d-picture              version 1.1.1
 ## Current esci-precision for planning version 1.1.3
 ## Current esci-correlation            version 1.1.2
-## Current esci-dance-r                version 1.1.2
+## Current esci-dance-r                version 1.1.3
 
 
 You can see which version by hovering on the logo.
