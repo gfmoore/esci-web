@@ -41,11 +41,12 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+1.1.2  13 Nov 2020 #9 Stop getting a negative zero for rho
 
 */
 //#endregion 
 
-let version = '1.1.1';
+let version = '1.1.2';
 
 let testing = false;
 
@@ -415,6 +416,7 @@ $(function() {
         rs = data.from;
         sliderinuse = true;  //don't update dslider in updater()
         updater();
+        if (Math.abs(rs) < 0.0001) rs = 0.0;  //to stop getting a value of -0.00
         $rval.val(rs.toFixed(2).toString().replace('0.', '.'));
         if (sampletaken) {
           $calculatedr.text(r.toFixed(2).toString().replace('0.', '.'));
@@ -1710,6 +1712,7 @@ $(function() {
     if (rs > 1) {
       rs = 1;
     }
+    if (Math.abs(rs) < 0.0001) rs = 0.0;  //to stop getting a value of -0.00
     $rval.val(rs.toFixed(2).toString().replace('0.', '.'));
     $calculatedr.text(r.toFixed(2).toString().replace('0.', '.'));
     $latestsample.text(r.toFixed(2).toString().replace('0.', '.'));
@@ -1734,6 +1737,7 @@ $(function() {
   function rnudgebackward() {
     rs -= 0.01;
     if (rs < -1) rs = -1;
+    if (Math.abs(rs) < 0.0001) rs = 0.0;  //to stop getting a value of -0.00
     $rval.val(rs.toFixed(2).toString().replace('0.', '.'));
     $calculatedr.text(r.toFixed(2).toString().replace('0.', '.'));
     $latestsample.text(r.toFixed(2).toString().replace('0.', '.'));
@@ -1758,6 +1762,7 @@ $(function() {
   function rnudgeforward() {
     rs += 0.01;
     if (rs > 1) rs = 1;
+    if (Math.abs(rs) < 0.0001) rs = 0.0;  //to stop getting a value of -0.00
     $rval.val(rs.toFixed(2).toString().replace('0.', '.'));
     $calculatedr.text(r.toFixed(2).toString().replace('0.', '.'));
     $latestsample.text(r.toFixed(2).toString().replace('0.', '.'));
