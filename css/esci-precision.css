@@ -23,6 +23,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 0.1.22
 
 1.1.0  6 Nov 2020 Rationalised into one repository
+1.1.5
 
 #endregion */
 
@@ -409,7 +410,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   font-size: 1.4rem;
   padding-left: 0rem;
   padding-top: 1.3rem;
-  width: 3rem;
+  width: 3.0rem;
 }
 
 #targetmoesliderpanel {
@@ -422,23 +423,6 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   font-size: 1.4rem !important;
 }
 
-/*---------------Truncate display unpaired data slider--------------*/
 
-/* #truncatedisplayudslider {
-
-} */
-
-
-/*---------------Truncate display paired data slider--------------*/
-
-/* #truncatedisplayudslider {
-
-} */
-
-/*---------------Correlation rho paired data slider--------------*/
-
-/* #correlationrhoslider {
-
-} */
 
 

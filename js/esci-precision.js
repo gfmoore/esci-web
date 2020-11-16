@@ -46,11 +46,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.1.2  13 Nov 2020 #7 erratic N fixed - rho set to 0.01
 1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
 1.1.4  16 Nov 2020 #10 Add confidence intervals dropdown and change TargetMoe increment to 0.01
+1.1.5  16 Nov 2020 #13 Adjusted TragetMoE slider to allow better alignment with axis ticks
 
 */
 //#endregion 
 
-let version = '1.1.4';
+let version = '1.1.5';
 let test = true;
 
 'use strict';
@@ -275,14 +276,14 @@ $(function() {
     // #region position sliders
     //reposition target moe slider on resize
     targetmoetop = 0;
-    targetmoeleft = margin.left;
+    targetmoeleft = margin.left - 15;
     targetmoewidth = width - 50;
 
     //position the d slider title
     $('#targetmoetitle').css({
       position:'absolute',
       top: targetmoetop,
-      left: 10
+      left: 5
     })
     
     //position the target slider
