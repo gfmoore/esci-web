@@ -277,7 +277,7 @@ $(function() {
     //reposition target moe slider on resize
     targetmoetop = 0;
     targetmoeleft = margin.left - 15;
-    targetmoewidth = width - 50;
+    targetmoewidth = width - 40;
 
     //position the d slider title
     $('#targetmoetitle').css({
