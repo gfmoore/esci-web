@@ -45,11 +45,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
 1.1.2  13 Nov 2020 #7 erratic N fixed - rho set to 0.01
 1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
+1.1.4  16 Nov 2020 #10 Add confidence intervals dropdown and change TargetMoe increment to 0.01
 
 */
 //#endregion 
 
-let version = '1.1.3';
+let version = '1.1.4';
 let test = true;
 
 'use strict';
@@ -201,8 +202,8 @@ $(function() {
       $displayvaluespd.prop('checked', true);
       displayvaluespd = true;
 
-      $CIsectionud.hide();
-      $CIsectionpd.hide();
+      //$CIsectionud.hide();
+      //$CIsectionpd.hide();
 
     }
 
@@ -257,8 +258,8 @@ $(function() {
     //pdf display
     svgD = d3.select('#display').append('svg').attr('width', '100%').attr('height', '100%');
 
-    $ciud.text(0.4);
-    $cipd.text(0.4);
+    $ciud.text(0.40.toFixed(2));
+    $cipd.text(0.40.toFixed(2));
 
     setupSliders();
     clear();
@@ -363,8 +364,8 @@ $(function() {
       min: 0.0,
       max: 2.0,
       from: 0.4,
-      step: 0.005,
-      prettify: prettify3,
+      step: 0.01,
+      prettify: prettify2,
       //on slider handles change
       onChange: function (data) {
         targetmoe = data.from;
@@ -470,16 +471,16 @@ $(function() {
     if (targetmoe < 0.05) targetmoe = 0.05;
     if (targetmoe > 2.0) targetmoe = 2.0;
     $targetmoeslider.update({from: targetmoe});
-    $ciud.text(targetmoe.toFixed(3));
-    $cipd.text(targetmoe.toFixed(3));
+    $ciud.text(targetmoe.toFixed(2));
+    $cipd.text(targetmoe.toFixed(2));
   }
 
   function redrawDisplay() {
 
     if (!sliderinuse) updatetargetmoeslider();
     sliderinuse = false;
-    $ciud.text(targetmoe.toFixed(3));
-    $cipd.text(targetmoe.toFixed(3));
+    $ciud.text(targetmoe.toFixed(2));
+    $cipd.text(targetmoe.toFixed(2));
 
     $truncatedisplayudval.val(truncatedisplayud.toFixed(2));    
     $truncatedisplaypdval.val(truncatedisplaypd.toFixed(2));
@@ -1201,13 +1202,13 @@ $(function() {
 
   /*---------------------------------------------Tab 2 Panel 5 Truncate MoE----------------------------*/
 
- /*--------------------------------------------- Tab 2 Panel 6 CIs-------------------------------------*/
+  /*--------------------------------------------- Tab 2 Panel 6 CIs-------------------------------------*/
 
- $CIpd.on('change', function() {
-  alphapd = parseFloat($CIpd.val()); 
+  $CIpd.on('change', function() {
+    alphapd = parseFloat($CIpd.val()); 
 
-  drawFeatures()
-})
+    drawFeatures()
+  })
 
   // #region  -----------------------------------Nudge bars ------------------------------------------------
 
@@ -1229,7 +1230,7 @@ $(function() {
   })
 
   function targetmoenudgebackward() {
-    targetmoe -= 0.005;
+    targetmoe -= 0.01;
     if (targetmoe < 0.05) targetmoe = 0.05;
     sliderinuse = true;
     updatetargetmoeslider()
@@ -1252,7 +1253,7 @@ $(function() {
   })
 
   function targetmoenudgeforward() {
-    targetmoe += 0.005;
+    targetmoe += 0.01;
     if (targetmoe > 2.0) targetmoe = 2.0;
     sliderinuse = true;
     updatetargetmoeslider()
@@ -1481,31 +1482,35 @@ $(function() {
     Tipped.create('.hometip',       'Click to return to esci Home',                   { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
 
-    Tipped.create('.tab1tip',     'Two Independent Groups Design, each group of size <em>N</em>', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.tab2tip',     'Paired Design, with group of size <em>N</em>', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.tab1tip',           'Two Independent Groups Design, each group of size <em>N</em>', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.tab2tip',           'Paired Design, with group of size <em>N</em>', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-    Tipped.create('.targettip',  'Use large slider below figure to choose a value for target MoE', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('#ciud',        'Value of target MoE, marked by position of cursor', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('#cipd',        'Value of target MoE, marked by position of cursor', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.targettip',         'Use large slider below figure to choose a value for target MoE', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#ciud',              'Value of target MoE, marked by position of cursor', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('#cipd',              'Value of target MoE, marked by position of cursor', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
 
-    Tipped.create('.ncurvestip', 'Curves show the relation between <em>N</em> and target MoE', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.ncaveragetip', 'Black curve shows how <em>N</em> varies with target MoE on average', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.ncassurancetip', 'Red curve shows how <em>N</em> varies with target MoE with 99% assurance (grey curve: on average)', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.ncurvestip',        'Curves show the relation between <em>N</em> and target MoE', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.ncaveragetip',      'Black curve shows how <em>N</em> varies with target MoE on average', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.ncassurancetip',    'Red curve shows how <em>N</em> varies with target MoE with 99% assurance (grey curve: on average)', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     Tipped.create('.dispvalsheadertip', 'Turn features on or off', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.dispvalstip', 'Turn on or off the display of <em>N</em> values at each point on displayed curve(s)', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.dispgridlinestip', 'Turn on or off the display of grid lines', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.dispvalstip',       'Turn on or off the display of <em>N</em> values at each point on displayed curve(s)', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.dispgridlinestip',  'Turn on or off the display of grid lines', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     
-    Tipped.create('.truncatetip', 'Use slider to choose where to truncate the left end of curve(s)', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.truncatetip',       'Use slider to choose where to truncate the left end of curve(s)', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     Tipped.create('.truncateslidertip', 'Select a value between 0.05 and 0.30', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.truncatevaltip', 'Left-truncate curve(s) at this value', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.truncatevaltip',    'Left-truncate curve(s) at this value', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
 
-    Tipped.create('.correltip',       'Use slider to set population correlation ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.correllabeltip',  'Use slider to set population correlation ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.correlslidertip', 'Set ρ between .00 and .99', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.correlvaltip', 'ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.correltip',         'Use slider to set population correlation ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.correllabeltip',    'Use slider to set population correlation ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.correlslidertip',   'Set ρ between .00 and .99', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.correlvaltip',      'ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+
+    Tipped.create('.citip',             'Confidence interval', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.copcnttip',         'Confidence interval percentage', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    //Tipped.create('. tip', '', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     // Tipped.create('. tip', '', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
