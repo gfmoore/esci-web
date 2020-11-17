@@ -47,11 +47,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
 1.1.4  16 Nov 2020 #10 Add confidence intervals dropdown and change TargetMoe increment to 0.01
 1.1.5  16 Nov 2020 #13 Adjusted TragetMoE slider to allow better alignment with axis ticks
+1.1.6  17 Nov 2020 #10 Reposition CI dropdown etc
 
 */
 //#endregion 
 
-let version = '1.1.5';
+let version = '1.1.6';
 let test = true;
 
 'use strict';
@@ -202,9 +203,6 @@ $(function() {
 
       $displayvaluespd.prop('checked', true);
       displayvaluespd = true;
-
-      //$CIsectionud.hide();
-      //$CIsectionpd.hide();
 
     }
 
@@ -562,7 +560,7 @@ $(function() {
 
     //add some text labels
     svgD.append('text').text('N').attr('class', 'bottomaxistext').attr('x', 10 ).attr('y', heightD/2).attr('text-anchor', 'start').attr('fill', 'black').attr('font-size', '1.8rem').style('font-style', 'italic');
-    svgD.append('text').text('MoE of 95% CI, in population standard deviation units').attr('class', 'leftaxistext').attr('x', width/4 ).attr('y', heightD-10).attr('text-anchor', 'start').attr('fill', 'black').attr('font-size', '1.4rem').style('font-style', 'italic');
+    svgD.append('text').text('MoE of CI, in population standard deviation units').attr('class', 'leftaxistext').attr('x', width/4 ).attr('y', heightD-10).attr('text-anchor', 'start').attr('fill', 'black').attr('font-size', '1.4rem').style('font-style', 'italic');
     
     //add header labels
     if (tab === 'Unpaired') {
@@ -1509,11 +1507,9 @@ $(function() {
     Tipped.create('.correlslidertip',   'Set ρ between .00 and .99', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     Tipped.create('.correlvaltip',      'ρ', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
-    Tipped.create('.citip',             'Confidence interval', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-    Tipped.create('.copcnttip',         'Confidence interval percentage', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.copcnttip',         'Choose confidence level % for CI', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    
     //Tipped.create('. tip', '', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
-
-    // Tipped.create('. tip', '', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     Tipped.disable('[data-tooltip]');
   }

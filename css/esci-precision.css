@@ -24,6 +24,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.5
+1.1.6  17 Nov 2020 #10 Reposition CI dropdown etc
 
 #endregion */
 
@@ -203,7 +204,13 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 }
 
 
+select {
+  font-size: 1.5rem !important;
+}
 
+option {
+  font-size: 1.5rem !important;
+}
 
 /*---------------Tab 1 Panel 1 Target MoE----------------------------------------------*/
 
@@ -211,6 +218,16 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   border: 1px solid black;
   background-color: #FFFF99;
   padding: 0.5rem;
+}
+
+#CIud {
+  height: 2.5rem;
+}
+
+#ciud { /*the value of the target moe */
+  font-size: 1.8rem;
+  padding-left: 0.5rem;
+  margin-left: 1.0rem;
 }
 
 /*---------------Tab 1 Panel 2 N curves----------------------------------------------*/
@@ -260,25 +277,6 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   width: 4rem;
 }
 
-/*---------------------------------- Tab 1 Panel 5 CI Section------------------------------------------------------------------*/
-
-#cipcntdivud {
-  display: grid;
-  grid-template-columns: 6.5rem  auto;
-  margin-left: 0.5rem;
-  margin-bottom: 0.2rem;
-}
-
-#CIsectionud {
-  border: 1px solid black;
-  background-color: #b4c7e7;
-  padding: 0.5rem;
-}
-
-.citip {
-  margin-bottom: 0.5rem;
-}
-
 
 
 /*--------------------------------------Paired data tab------------------------------------------------------*/
@@ -294,6 +292,18 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   background-color: #FFFF99;
   padding: 0.5rem;
 }
+
+#CIpd {
+  height: 2.5rem;
+}
+
+/*the value of the targetmoe*/
+#cipd {
+  font-size: 1.8rem;
+  padding-left: 0.5rem;
+  margin-left: 1.0rem;
+}
+
 
 /*---------------Tab 2 Panel 2 Population Correlation----------------------------------------------*/
 
@@ -366,25 +376,6 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
   width: 4rem;
 }
 
-
-/*---------------------------------- Tab 2 Panel 6 CI Section------------------------------------------------------------------*/
-
-#cipcntdivpd {
-  display: grid;
-  grid-template-columns: 6.5rem auto;
-  margin-left: 0.5rem;
-  margin-bottom: 0.2rem;
-}
-
-#CIsectionpd {
-  border: 1px solid black;
-  background-color: #b4c7e7;
-  padding: 0.5rem;
-}
-
-.citip {
-  margin-bottom: 0.5rem;
-}
 
 
 

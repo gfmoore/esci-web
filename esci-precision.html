@@ -29,7 +29,8 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
 1.1.4  16 Nov 2020 #10 Add confidence intervals dropdown and change TargetMoe increment to 0.01
-1.1.5
+1.1.5  
+1.1.6  17 Nov 2020 #10 Reposition CI dropdown etc
 
 -->
 <!--endregion -->
@@ -98,7 +99,7 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
         <div id=breadcrumbs><span id=homecrumb class=hometip data-tooltip>Home></span><span id=distributioncrumb>precision for planning</span></div>
 
         <div id=tab1text data-tooltip>
-          Find the smallest <em>N</em> that will give a 95% CI with MoE no more than chosen target MoE, either on average, or with 99% assurance
+          Find the smallest <em>N</em> that will give a CI with MoE no more than chosen target MoE, either on average, or with 99% assurance
         </div>        
         <!---------------------------------Set up tabs------------------------------------------------->
         <div id="smarttab">
@@ -121,7 +122,19 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
                 <!-------------------------------------Tab 1 Panel 1 Target MoE Unpaired----------------------------------------->                
                 <div id=targetmoeudpanel>
-                  <div  class=font18><span class='red targettip' data-tooltip>1 </span><span class=targettip data-tooltip>Target MoE of 95% CI </span><span id=ciud data-tooltip class=backcolour>0.0</span></div>
+                  <div  class=font18><span class='red targettip' data-tooltip>1 </span> <span><span class=targettip data-tooltip>Target MoE of</span>
+                    <select id=CIud class=copcnttip data-tooltip>
+                      <option value=0.5>50%</option>
+                      <option value=0.32>68%</option>
+                      <option value=0.2>80%</option>
+                      <option value=0.1>90%</option>
+                      <option value=0.05 selected>95%</option>
+                      <option value=0.02>98%</option>
+                      <option value=0.01>99%</option>
+                      <option value=0.002>99.8%</option>
+                      <option value=0.001>99.9%</option>
+                    </select>
+                    <span class=copcnttip data-tooltip>CI</span> </span><span id=ciud data-tooltip class=backcolour>0.0</span></div>
                   <div class='font15 targettip' data-tooltip>...set by slider below figure</div>
                 </div>
 
@@ -154,30 +167,6 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
           
                 </div>
 
-                <!-----------------------------------------Tab 1 Panel 5 Latest sample Confidence Interval---------------------------------------------------------->
-
-                <div id=CIsectionud>
-                  <div class='citip font18' data-tooltip><span class=red>5 </span>CIs</div>
-                  <div id=cipcntdivud class=cipcnttip data-tooltip>
-                    <div class=copcnttip data-tooltip><span>CI%  <em>C </em></span></div>
-                    <div>
-                      <select id=CIud class=copcnttip data-tooltip>
-                        <option value=0.5>50%</option>
-                        <option value=0.32>68%</option>
-                        <option value=0.2>80%</option>
-                        <option value=0.1>90%</option>
-                        <option value=0.05 selected>95%</option>
-                        <option value=0.02>98%</option>
-                        <option value=0.01>99%</option>
-                        <option value=0.002>99.8%</option>
-                        <option value=0.001>99.9%</option>
-                      </select>
-                    </div>
-                  </div>
-
-                </div>
-
-
               </div>
 
             </div>
@@ -191,7 +180,19 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
                 <!-------------------------------------Tab 2 Panel 1 Target MoE Paired----------------------------------------->                
   
                 <div id=targetmoepdpanel>
-                  <div class=font18><span class='red targettip' data-tooltip>1 </span><span class=targettip data-tooltip>Target MoE of 95% CI </span><span id=cipd class=backcolour>0.0</span></div>
+                  <div class=font18><span class='red targettip' data-tooltip>1 </span><span><span class=targettip data-tooltip>Target MoE of </span>
+                    <select id=CIpd class=copcnttip data-tooltip>
+                      <option value=0.5>50%</option>
+                      <option value=0.32>68%</option>
+                      <option value=0.2>80%</option>
+                      <option value=0.1>90%</option>
+                      <option value=0.05 selected>95%</option>
+                      <option value=0.02>98%</option>
+                      <option value=0.01>99%</option>
+                      <option value=0.002>99.8%</option>
+                      <option value=0.001>99.9%</option>
+                    </select>
+                    <span class=copcnttip data-tooltip>CI </span> </span><span id=cipd class=backcolour>0.0</span></div>
                   <div class='font15 targettip' data-tooltip>...set by slider below figure</div>
                 </div>
            
@@ -239,31 +240,6 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
                   </div>
 
                 </div>
-
-                <!-----------------------------------------Tab 2 Panel 6 Confidence Interval---------------------------------------------------------->
-
-                <div id=CIsectionpd>
-                  <div class='citip font18' data-tooltip><span class=red>5 </span>CIs</div>
-                  <div id=cipcntdivpd class=cipcnttip data-tooltip>
-                    <div class=copcnttip data-tooltip><span>CI%  <em>C </em></span></div>
-                    <div>
-                      <select id=CIpd class=copcnttip data-tooltip>
-                        <option value=0.5>50%</option>
-                        <option value=0.32>68%</option>
-                        <option value=0.2>80%</option>
-                        <option value=0.1>90%</option>
-                        <option value=0.05 selected>95%</option>
-                        <option value=0.02>98%</option>
-                        <option value=0.01>99%</option>
-                        <option value=0.002>99.8%</option>
-                        <option value=0.001>99.9%</option>
-                      </select>
-                    </div>
-                  </div>
-
-                </div>
-
-
 
               </div>
 
