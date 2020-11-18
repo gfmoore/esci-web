@@ -4,7 +4,7 @@
 ## Current esci-dance                  version 1.1.1
 ## Current esci-distributions          version 1.1.1 
 ## Current esci-d-picture              version 1.1.1
-## Current esci-precision for planning version 1.1.6
+## Current esci-precision for planning version 1.1.7
 ## Current esci-correlation            version 1.1.2
 ## Current esci-dance-r                version 1.1.3
 

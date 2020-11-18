@@ -48,11 +48,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 1.1.4  16 Nov 2020 #10 Add confidence intervals dropdown and change TargetMoe increment to 0.01
 1.1.5  16 Nov 2020 #13 Adjusted TragetMoE slider to allow better alignment with axis ticks
 1.1.6  17 Nov 2020 #10 Reposition CI dropdown etc
+1.1.7  18 Nov 2020 #10 Adjustment in text panel 1
 
 */
 //#endregion 
 
-let version = '1.1.6';
+let version = '1.1.7';
 let test = true;
 
 'use strict';
