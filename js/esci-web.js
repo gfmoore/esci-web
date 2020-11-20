@@ -40,11 +40,12 @@ Licence       GNU General Public LIcence Version 3, 29 June 2007
 
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+1.1.2 20 Nov 2020 Precision released from lockdown.
 
 */
 //#endregion 
 
-let version = '1.1.1';
+let version = '1.1.2';
 
 // 'use strict';
 $(function() {
@@ -162,13 +163,12 @@ $(function() {
   })
 
   $('#menu4').on('click', function() {
-    //window.location.href = './esci-precision.html';
-    $('#message').show();
+    window.location.href = './esci-precision.html';
+    //$('#message').show();
   })
 
   $('#precision').on('click', function() {
-    //window.location.href = './esci-precision.html';
-    $('#message').show();
+    window.location.href = './esci-precision.html';
   })
 
   $('#menu5').on('click', function() {

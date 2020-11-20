@@ -1,6 +1,6 @@
 # esci-web menu and components
 
-## Current esci-web (menu)             version 1.1.1
+## Current esci-web (menu)             version 1.1.2
 ## Current esci-dance                  version 1.1.1
 ## Current esci-distributions          version 1.1.1 
 ## Current esci-d-picture              version 1.1.1
