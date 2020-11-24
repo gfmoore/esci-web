@@ -50,7 +50,7 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 
 let version = '1.1.4';
 
-let testing = false;
+let testing = true;
 
 'use strict';
 $(function() {
@@ -727,6 +727,12 @@ $(function() {
         else {
           $percentCIcapture.text('-');
         }
+
+        //added for r = -1, +1
+        if (rs <= -1 || rs >= 1) {
+          $percentCIcapture.text('-');
+        }
+
       }
 
     }
@@ -1662,7 +1668,11 @@ $(function() {
     } 
     else {
       $percentCIcapture.text('-');
-      //stop();
+    }
+
+    //dont display if rs = -1 or +1
+    if (rs <= -1 || rs >= 1) {
+      $percentCIcapture.text('-');
     }
 
     recolour();
