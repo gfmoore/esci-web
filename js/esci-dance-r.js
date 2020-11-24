@@ -50,7 +50,7 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 
 let version = '1.1.4';
 
-let testing = true;
+let testing = false;
 
 'use strict';
 $(function() {
@@ -415,7 +415,7 @@ $(function() {
       type: 'single',
       min: -1,
       max: 1,
-      from: 1.0, //0.5,
+      from: 0.5,
       step: 0.01,
       prettify: prettify2,
       //on slider handles change
