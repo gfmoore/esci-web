@@ -306,7 +306,7 @@ $(function() {
         sliderinuse = true;  //don't update dslider in updater()
         updater();
         $rval.val(rt.toFixed(2).toString().replace('0.', '.'));
-        $calculatedr.text(r.toFixed(2).toString().replace('0.', '.'))
+        $calculatedr.text(r.toFixed(2).toString().replace('0.', '.'));
 
         createScatters();
         drawScatterGraph();

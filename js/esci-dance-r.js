@@ -43,11 +43,12 @@ Licence       GNU General Public Licence Version 3, 29 June 2007
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
 1.1.2  13 Nov 2020 #9 Stop getting a negative zero for rho
 1.1.3  13 Nov 2020 #11 Remove italic from rho symbol in html
+1.1.4  24 Nov 2020 #14 No CIs when r = -1 or +1;
 
 */
 //#endregion 
 
-let version = '1.1.3';
+let version = '1.1.4';
 
 let testing = false;
 
@@ -331,17 +332,22 @@ $(function() {
       $CIsection.show();
       $capturesection.show();
 
-      //$displayCIs.prop('checked', true);
-      //displayCIs = true;
-
       $displaypopn.prop('checked', false);
       displaypopn = false;
 
       $displaylinetomarkrho.prop('checked', true);
       displaylinetomarkrho = true;
 
-      $showrheap.prop('checked', true);
-      showrheap = true;
+      $displayCIs.prop('checked', true);
+      displayCIs = true;
+
+      $showcapture.prop('checked', true);
+      showcapture = true;
+
+      // $showrheap.prop('checked', true);
+      // showrheap = true;
+
+      rs = 1;
 
       speed = 0;
       $speed.val(0);
@@ -409,7 +415,7 @@ $(function() {
       type: 'single',
       min: -1,
       max: 1,
-      from: 0.5,
+      from: 1.0, //0.5,
       step: 0.01,
       prettify: prettify2,
       //on slider handles change
@@ -715,7 +721,6 @@ $(function() {
         }
         percentCaptured = captured/samplestaken * 100;
 
-        //if (displayCIs) {
         if (showcapture) {
           $percentCIcapture.text(percentCaptured.toFixed(2));
         }
@@ -749,6 +754,18 @@ $(function() {
 
     //now get corr coeff of sample
     r = jStat.corrcoeff( xscatters, yscatters );
+
+    //Because of IEEE 754 rounding get r (and rs as well) to 4 dp
+    r = parseFloat(r.toFixed(4));
+    rs = parseFloat(rs.toFixed(4));
+
+    //Just ensure that r = -1 or 1 for rs = -1 or 1
+    if (rs <= -1) {
+      r = -1;
+    }
+    if (rs >= 1) {
+      r = 1;
+    }
   }
 
   function drawScatterGraph() {
@@ -781,7 +798,8 @@ $(function() {
     My = jStat.mean(yscatters)
     Sy = jStat.stdev(yscatters, true)
 
-    r = jStat.corrcoeff( xscatters, yscatters )
+    r = jStat.corrcoeff( xscatters, yscatters );
+    r = parseFloat(r.toFixed(4));
 
     //get Sxy, Sxx, Syy
     Sxx = 0;
@@ -943,6 +961,10 @@ $(function() {
       bloby = parseInt($(this).attr('cy'));
       blobx = $(this).attr('cx');
       rr = $(this).attr('rr');  //this is correlation r stored in blob, can't be r as that is radius
+      
+      //make rr to 4 dp to avoid rounding errors
+      rr = parseFloat(rr);
+      rr = parseFloat(rr.toFixed(4));
 
       //should I add to heap? If it is added to heap, then need to continue to next item. I'm sure this could be better structured!
       moveblob = true;
@@ -991,6 +1013,9 @@ $(function() {
     //just remember the last lowerarm, upperarm for use with displayCIs on off
     lastlowerarm = lowerarm;
     lastupperarm = upperarm;
+
+    //make sure r/rr is properly rounded, we don't want 0.99999999999 when we want 1
+    r = parseFloat(r.toFixed(4));
 
     //create wings for current sample
     if (showcapture && capturedblob === 'false') {
@@ -1112,6 +1137,22 @@ $(function() {
 
 
   function calculateFisherrtozTransformation() {
+
+    //if r equals -1 or +1 then no CI calculated.
+    if (r <= -1) {
+      lowerarm = -1;
+      upperarm = -1;
+      displayCIs = false; //might as well not bother displaying any CIs
+      return;
+    }
+    if (r >= 1) {
+      lowerarm = 1;
+      upperarm = 1;
+      displayCIs = false; //might as well not bother displaying any CIs
+      return;
+    }
+    //just recheck this
+    displayCIs = $displayCIs.is(':checked'); //just see what displayCIs is true or false
 
     let zr = 0.5 * Math.log( ( 1 + r ) / ( 1 - r ) );  //Math.log is the natural logarithm
 
