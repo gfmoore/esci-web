@@ -148,9 +148,10 @@ Start using version history now to record changes and fixes
 
 1.1.0  6 Nov 2020 Rationalised into one repository
 1.1.1  6 Nov 2020 #6 Remove tip for header, subheader
+1.1.2  17 Dec 2020 #15 Tweaks to tips 
 
 */
-let version = '1.1.1';
+let version = '1.1.2';
  
 'use strict';
 
@@ -3355,14 +3356,14 @@ $(function() {
     Tipped.create('#capturedpercentdiv',   'Percent of CIs in current run that capture &mu;',               { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     //8.Capture of next mean
-    Tipped.create('.capturenextmeantip', 'Explore capture by CIs of the next mean, which is the mean just above a CI in the dance. When a CI does NOT capture, a pink diagonal line joins a limit of the CI up to the mean just above', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.capturenextmeantip', 'Explore capture by CIs of the next mean, which is the mean just above a CI in the dance. When a CI does NOT capture, a pink diagonal line joins a limit of the CI up to the mean just above. Cannot have both \'Capture of next mean\' and \'Dance of the <em>p</em> values\' visible at once.', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
     Tipped.create('#numberofnextmeansdiv',        'Number of means available for capture, one less than number of samples in current run', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     Tipped.create('#numbercapturingnextmeandiv',  'Number of CIs that capture next mean in current run',    { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     Tipped.create('#percentcapturingnextmeandiv', 'Percent of CIs in current run that capture next mean',   { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     
     //9. p values
-    Tipped.create('.danceptip',                   'Display dance of the p values',                          { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
+    Tipped.create('.danceptip',                   'Display dance of the <em>p</em> values. Cannot have both \'Capture of next mean\' and \'Dance of the <em>p</em> values\' visible at once.',                          { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     Tipped.create('.psound',                      'Turn on sounds, may need a slow sampling rate to hear every sound', { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
     Tipped.create('.volumetip',                   'Set volume',                                             { skin: 'esci', size: 'xlarge', showDelay: 750, behavior: 'mouse', target: 'mouse', maxWidth: 250, hideOthers: true, hideOnClickOutside: true, hideAfter: 0 });
 
