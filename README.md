@@ -1,6 +1,6 @@
-##esci-web menu and components
+## esci-web menu and components
 
-#Please go to https://github.com/rcalinjageman/esci-web for live version (fork) as this is no longer updated.
+## Please go to https://github.com/rcalinjageman/esci-web for live version (fork) as this is no longer updated.
 
 ## Current esci-web (menu)             version 1.1.2
 ## Current esci-dances                 version 1.1.2
